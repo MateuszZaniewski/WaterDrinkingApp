@@ -121,9 +121,18 @@ html {
   border-radius: 0.5rem;
 }
 
+.inputSection .genders {
+  display: flex;
+  gap: 2rem;
+}
 .inputSection form {
   display: flex;
   flex-flow: column nowrap;
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
+  gap: 0.3rem;
+}
+.inputSection input {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
 }/*# sourceMappingURL=main.css.map */

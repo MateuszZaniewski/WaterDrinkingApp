@@ -21,7 +21,7 @@
         <img id="kropelekImg" src="assets/kropelek.png" alt="">
         <div class="welcomeText">
             <div class="WelcomeTextBox">
-                <span>Witaj Paulina!</span>
+                <span>Hello!</span>
                 <span>Please enter your data, so I can calculate your water demand!</span>
             </div>
         </div>
@@ -30,18 +30,26 @@
     <div class="inputSection">
         <form action="/inputfields">
             <label for="Name">Your Name</label>
-                <input type="text" name="" id="">
+                <input type="text" name="" id="name" placeholder="Enter your name">
             
             <label for="Weight">Weight</label>
-                <input type="text" name="" id="">
+                <input type="number" name="" id="weight" placeholder="Your weight in kg">
             
             <label for="Gender">Gender</label>
-                    <input type="text" name="" id="">
-
+            <div class="genders">
+                <div>
+                    <label for="Male">Male</label>
+                    <input type="radio" name="gender" id="gender" value="male" checked>
+                </div>
+                <div>
+                    <label for="Female">Female</label>
+                    <input type="radio" name="gender" id="gender" value="female">
+                </div>
+            </div>
             <label for="CupSize">You favourite cup size</label>
-                    <input type="text" name="" id="">
-            
+                    <input type="text" name="" id="cupSize" placeholder="Your cup size in ml">
         </form>
+        <button class="submit">Zapisz</button>
     </div>
 
 
