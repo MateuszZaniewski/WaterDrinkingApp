@@ -7,6 +7,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'Bellefair', serif;
 }
 
 html {
@@ -35,7 +36,7 @@ html {
         border-bottom: 1px solid white;
     }
 
-    #home{
+    .underline{
         border-bottom: 1px solid white;
     }
 }
@@ -80,12 +81,21 @@ html {
         font-size: 1.2rem;
     }
 
+    progress::-webkit-progress-value {
+        background: $blueShade6; 
+    }
+
+    progress::-webkit-progress-bar {
+        background-color: #ffffff;
+    }
+
     .bar{
         width: 25rem;
-        border: 1px solid $blueShade8;
+        border: 0.18rem solid $blueShade8;
         height: 1.2rem;
         border-radius: 0.5rem;
         margin: 0 0.5rem;
+        
     }
 }
 

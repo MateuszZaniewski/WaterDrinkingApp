@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/32c97c3ba8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>Document</title>
 </head>
 <body>
     <div class="headerNav">
-        <span id="home"> <i class="fa-solid fa-house"></i> <a href="#">Home</a></span>
+        <span class="underline" id="home"> <i class="fa-solid fa-house"></i> <a href="#">Home</a></span>
         <span id="settings"> <i class="fa-solid fa-gear"></i> <a href="settings.html">Settings</a></span>
     </div>
 
@@ -26,12 +29,12 @@
 
     <div class="status">
         <i class="fa-regular fa-heart"></i>
-        <div class="bar"></div>
+        <progress class="bar" value="0" max="2000"></progress>
         <i class="fa-sharp fa-solid fa-droplet"></i>    
     </div>
 
     <div class="resultat">
-        <span>0 ml</span>
+        <span id="currentVolume">0 ml</span>
         <span>/</span>
         <span>2000 ml</span>
     </div>
@@ -40,29 +43,29 @@
         <div class="cupSectionPodsekcja">
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+50 ml</span>
+                <span class="CupVol">50 ml</span>
             </div>
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+100 ml</span>
+                <span class="CupVol">100 ml</span>
             </div>
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+200 ml</span>
+                <span class="CupVol">200 ml</span>
             </div>
         </div>
         <div class="cupSectionPodsekcja">
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+250 ml</span>
+                <span class="CupVol">250 ml</span>
             </div>
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+500 ml</span>
+                <span class="CupVol">500 ml</span>
             </div>
             <div class="cupSectionPodsekcja__cupDiv">
                 <img src="assets/cup.png" alt="">
-                <span>+twójKubek ml</span>
+                <span class="CupVol">0 ml</span>
             </div>
         </div>  
     </div>
