@@ -1,16 +1,19 @@
 const cupVolumes = document.querySelectorAll('.CupVol')
 const progressBar = document.querySelector('.bar')
 const currentVolume = document.querySelector('#currentVolume')
-let progressValue = document.querySelector('progress')
-const subButton = document.querySelector('.submit')
-cupVolumes.forEach((el) => {
-    el.addEventListener('click', FillProgressBar)
-})
-subButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
+const saveButton = document.querySelector('.submit')
 
-function FillProgressBar() {
-    let progress = Number(this.innerText.slice(0,-3))
-    console.log(progress)
+const cups = document.querySelectorAll('.cupDiv__image')  // zmienić by klikało się w cupsa
+cups.forEach((el) => {
+    el.addEventListener('click', FillProgressBarByClickingCupImage)
+})
+
+let progressValue = document.querySelector('progress')
+
+saveButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
+
+function FillProgressBarByClickingCupImage() {
+    let progress = Number(this.dataset.size)
     progressValue.value += progress
     currentVolume.innerText = `${progressValue.value} ml`
 }
@@ -27,7 +30,25 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('cupSize', `${cupSize}`);
 }
 
-// const userName = document.querySelector('#userName')
-// userName.innerHTML = localStorage.getItem("name");
+function populateHTMLFormsWithLocalStorageData() {
+    const userName = document.querySelector('#name') // imie
+    const userWeight = document.querySelector('#weight') // waga
+    const userCupSize = document.querySelector('#cupSize') // wielkość kubka
+    userName.value = localStorage.getItem('name')
+    userWeight.value = localStorage.getItem('weight')
+    userCupSize.value = localStorage.getItem('cupSize')
+//     userName.innerHTML = localStorage.getItem("name");
+//     document.getElementById("empname").value = localStorage.getItem("ls-ename");
+}
 
-//https://stackoverflow.com/questions/40598081/how-to-populate-an-html-input-field-from-html-localstorage
+function setNameForGreeting() {
+    const userName = document.querySelector('.username')
+    userName.innerText = localStorage.getItem('name')
+}
+
+// Funkcje generowane przy odświeżeniu strony
+populateHTMLFormsWithLocalStorageData()
+setNameForGreeting()
+
+
+
