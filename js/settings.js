@@ -1,6 +1,8 @@
 const saveButton = document.querySelector('.submit')
 saveButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
-
+const saveMassage = document.querySelector('.saveMassage__text')
+const clearStorageButton = document.querySelector('.clearStorage')
+clearStorageButton.addEventListener('click', clearLocalStorage)
 
 function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
@@ -12,6 +14,12 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('gender', `${gender}`);
     localStorage.setItem('cupSize', `${cupSize}`);
+    saveMassage.style.display = 'block'
+    setTimeout(showSaveMaggase, 3000)
+}
+
+function showSaveMaggase(){
+    saveMassage.style.display = 'none'
 }
 
 function populateHTMLFormsWithLocalStorageData() {
@@ -26,6 +34,10 @@ function populateHTMLFormsWithLocalStorageData() {
 function setNameForGreeting() {
     const userName = document.querySelector('.username')
     userName.innerText = localStorage.getItem('name')
+}
+
+function clearLocalStorage() {
+    localStorage.clear()
 }
 
 

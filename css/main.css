@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+.hidden {
+  display: block;
+}
+
 .headerNav {
   font-size: 1.5rem;
   display: flex;
@@ -89,7 +93,17 @@ html {
   font-size: 1.2rem;
   font-weight: bold;
   padding-top: 0.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+}
+
+.missionCompleteText {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #1376ca;
+  text-align: center;
+  display: none;
 }
 
 .cupSection {
@@ -142,10 +156,26 @@ html {
 .inputSection .submitDiv {
   display: flex;
   justify-content: center;
+  gap: 3rem;
 }
-.inputSection .submitDiv button {
+.inputSection .submitDiv .submit {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid #54a8ef;
   background-color: #73b7f2;
+}
+.inputSection .submitDiv .clearStorage {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #73b7f2;
+  background-color: #d0e7fb;
+}
+.inputSection .saveMassage {
+  font-size: 1.4rem;
+  text-align: center;
+  padding-top: 1rem;
+  color: #3598ec;
+}
+.inputSection .saveMassage .saveMassage__text {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

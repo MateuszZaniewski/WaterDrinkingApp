@@ -21,7 +21,7 @@
         <img id="kropelekImg" src="assets/kropelek.png" alt="">
         <div class="welcomeText">
             <div class="WelcomeTextBox">
-                <span>Hello <span class="username">Stranger</span><br> Please go to settings tab and enter Your data.</span>
+                <span>Hello <span class="username">Stranger</span>!<br> Please go to settings tab and enter Your data.</span>
                 <span>Let's dring some water!</span>
             </div>
         </div>
@@ -36,7 +36,10 @@
     <div class="resultat">
         <span id="currentVolume">0 ml</span>
         <span>/</span>
-        <span>2000 ml</span>
+        <span id="maxVolume">2000 ml</span>
+    </div>
+    <div class="missionCompleteText">
+        <span>Congratulations! You drank enough water for today</span>
     </div>
 
     <div class="cupSection">
@@ -64,8 +67,8 @@
                 <span class="CupVol">500 ml</span>
             </div>
             <div class="cupSectionPodsekcja__cupDiv">
-                <img class="cupDiv__image" src="assets/cup.png" alt="" data-size="0">
-                <span class="CupVol">0 ml</span>
+                <img class="cupDiv__image cupDiv__yourCup" src="assets/cup.png" alt="" data-size="0">
+                <span class="CupVol favCupVol">0 ml</span>
             </div>
         </div>  
     </div>
