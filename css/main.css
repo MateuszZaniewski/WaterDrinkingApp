@@ -58,6 +58,9 @@ html {
   border-radius: 0.5rem;
   padding: 0.5rem 0.5rem;
 }
+.kropelekAndText .welcomeText .WelcomeTextBox span {
+  text-align: center;
+}
 
 .status {
   padding-top: 3rem;
@@ -135,4 +138,14 @@ html {
 .inputSection input {
   margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
+}
+.inputSection .submitDiv {
+  display: flex;
+  justify-content: center;
+}
+.inputSection .submitDiv button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #54a8ef;
+  background-color: #73b7f2;
 }/*# sourceMappingURL=main.css.map */

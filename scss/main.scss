@@ -66,6 +66,10 @@ html {
             justify-content: left;
             border-radius: 0.5rem;
             padding: 0.5rem 0.5rem;
+
+            span{
+                text-align: center;
+            }
         }
     }
 
@@ -165,5 +169,17 @@ html {
     input {
         margin-bottom: 1.5rem;
         padding: 0.5rem 1rem;
+    }
+
+    .submitDiv{
+        display: flex;
+        justify-content: center;
+
+        button{
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid $blueShade6;
+            background-color: $blueShade5;
+        }
     }
 }
