@@ -178,4 +178,16 @@ html {
 }
 .inputSection .saveMassage .saveMassage__text {
   display: none;
+}
+
+.resetYourDayButton {
+  justify-content: center;
+  display: none;
+}
+.resetYourDayButton .resetYourProgress {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #73b7f2;
+  background-color: #d0e7fb;
+  margin-top: 5%;
 }/*# sourceMappingURL=main.css.map */

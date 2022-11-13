@@ -9,11 +9,13 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let weight = document.querySelector('#weight').value
     let gender = document.querySelector('#gender').value
     let cupSize = document.querySelector('#cupSize').value
+    let progressValue = document.querySelector('#currentVolume')
     console.log(name, weight, gender, cupSize)
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('gender', `${gender}`);
     localStorage.setItem('cupSize', `${cupSize}`);
+    localStorage.setItem('progressValue', `0`);
     saveMassage.style.display = 'block'
     setTimeout(showSaveMaggase, 3000)
 }
