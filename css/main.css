@@ -55,8 +55,6 @@ html {
 .kropelekAndText .welcomeText .WelcomeTextBox {
   margin-top: 2rem;
   border: 1px solid #b1d7f8;
-  display: flex;
-  flex-flow: column nowrap;
   align-items: center;
   justify-content: left;
   border-radius: 0.5rem;

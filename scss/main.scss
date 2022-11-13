@@ -64,8 +64,8 @@ html {
         .WelcomeTextBox {
             margin-top: 2rem;
             border: 1px solid $blueShade3;
-            display: flex;
-            flex-flow: column nowrap;
+            // display: flex;
+            // flex-flow: column nowrap;
             align-items: center;
             justify-content: left;
             border-radius: 0.5rem;
@@ -205,7 +205,7 @@ html {
         }
     }
 
-    .saveMassage {
+    .saveMassage{
         font-size: 1.4rem;
         text-align: center;
         padding-top: 1rem;

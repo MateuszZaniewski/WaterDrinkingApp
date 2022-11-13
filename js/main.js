@@ -4,6 +4,8 @@ const currentVolume = document.querySelector('#currentVolume')
 const congratsText = document.querySelector('.missionCompleteText')
 const maxVolume = document.querySelector('#maxVolume')
 const resetProgressButton = document.querySelector('.resetYourDayButton')
+const welcomeText = document.querySelector('#greet')
+console.log(welcomeText.innerHTML)
 
 const cups = document.querySelectorAll('.cupDiv__image')  // zmienić by klikało się w cupsa
 cups.forEach((el) => {
@@ -28,6 +30,7 @@ function setNameForGreetingAndUserCupSize() {
     if(localStorage.getItem('name') == null){
         userName.innerText = 'Stranger'
     } else {
+        welcomeText.innerHTML = `Hello <span class=\"username\">${localStorage.getItem('name')}</span>!<br> Enjoy drinking some water.`
         userName.innerText = localStorage.getItem('name')
     }
    
@@ -68,7 +71,6 @@ function resetProgressBar() {
     resetProgressButton.style.display = 'none'
     currentVolume.innerText = `${progressValue.value} ml`
     localStorage.setItem('progress', `0`);
-    
 }
 
 function loadCurrentVolumeFromLocalStorage() {
@@ -83,10 +85,17 @@ function checkForComplete() {
     }
 }
 
+function checkForCurrentProgressIsNull() {
+    if(localStorage.getItem('progress') == null){
+        localStorage.setItem('progress', `0`);
+    }
+}
+
 setNameForGreetingAndUserCupSize()
 calculateMaxWaterPerDayForUser()
 loadCurrentVolumeFromLocalStorage()
 checkForComplete()
+checkForCurrentProgressIsNull()
 
 if(localStorage.getItem('progressValue') == null){
     console.log(localStorage.getItem('progressValue'))
