@@ -19,11 +19,11 @@ html {
 }
 
 .headerNav {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding-top: 10%;
+    padding-top: 7%;
     padding-bottom: 5%;
     background-color: $blueShade6;
 
@@ -54,18 +54,16 @@ html {
     padding: 1rem 0;
 
     #kropelekImg {
-        width: 30%;
-        height: 30%;
+        width: 35%;
+        height: 35%;
     }
 
     .welcomeText {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
 
         .WelcomeTextBox {
             margin-top: 2rem;
             border: 1px solid $blueShade3;
-            // display: flex;
-            // flex-flow: column nowrap;
             align-items: center;
             justify-content: left;
             border-radius: 0.5rem;
@@ -86,7 +84,7 @@ html {
     justify-content: center;
 
     i {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     progress::-webkit-progress-value {
@@ -100,8 +98,8 @@ html {
     .bar{
         width: 25rem;
         border: 0.18rem solid $blueShade8;
-        height: 1.2rem;
-        border-radius: 0.5rem;
+        height: 1.8rem;
+        border-radius: 1rem;
         margin: 0 0.5rem;
         
     }
@@ -109,8 +107,8 @@ html {
 
 .resultat {
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: black;
     padding-top: 0.5rem;
     padding-bottom: 2rem;
 }
@@ -130,13 +128,13 @@ html {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
 
     
 
     .cupSectionPodsekcja {
         display: flex;
-        gap: 4rem;
+        gap: 8%;
         width: 80%;
         margin: 0 auto;
         justify-content: space-around;
@@ -152,6 +150,11 @@ html {
 
             span{
                 font-size: 1.2rem;
+            }
+
+            .cupDiv__image{
+                width: 120%;
+                height: 120%;
             }
         }
 
@@ -178,10 +181,13 @@ html {
         width: 50%;
         margin: 0 auto;
         gap: 0.3rem;
+        font-size: 1.5rem;
     }
+
 
     input {
         margin-bottom: 1.5rem;
+        margin-top: 0.25rem;
         padding: 0.5rem 1rem;
     }
 
@@ -189,12 +195,15 @@ html {
         display: flex;
         justify-content: center;
         gap: 3rem;
+        
 
         .submit{
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             border: 1px solid $blueShade6;
             background-color: $blueShade5;
+            font-size: 1.5rem;
+            font-weight: 500;
         }
 
         .clearStorage {
@@ -229,6 +238,10 @@ html {
         border: 1px solid $blueShade5;
         background-color: $blueShade2;
         margin-top: 5%;
+        font-size: 1.7rem;
     }
 
 }
+
+
+

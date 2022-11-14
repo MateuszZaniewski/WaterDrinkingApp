@@ -16,11 +16,11 @@ html {
 }
 
 .headerNav {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  padding-top: 10%;
+  padding-top: 7%;
   padding-bottom: 5%;
   background-color: #54a8ef;
 }
@@ -46,11 +46,11 @@ html {
   padding: 1rem 0;
 }
 .kropelekAndText #kropelekImg {
-  width: 30%;
-  height: 30%;
+  width: 35%;
+  height: 35%;
 }
 .kropelekAndText .welcomeText {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 .kropelekAndText .welcomeText .WelcomeTextBox {
   margin-top: 2rem;
@@ -70,7 +70,7 @@ html {
   justify-content: center;
 }
 .status i {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 .status progress::-webkit-progress-value {
   background: #54a8ef;
@@ -81,15 +81,15 @@ html {
 .status .bar {
   width: 25rem;
   border: 0.18rem solid #1688e9;
-  height: 1.2rem;
-  border-radius: 0.5rem;
+  height: 1.8rem;
+  border-radius: 1rem;
   margin: 0 0.5rem;
 }
 
 .resultat {
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  color: black;
   padding-top: 0.5rem;
   padding-bottom: 2rem;
 }
@@ -109,11 +109,11 @@ html {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 .cupSection .cupSectionPodsekcja {
   display: flex;
-  gap: 4rem;
+  gap: 8%;
   width: 80%;
   margin: 0 auto;
   justify-content: space-around;
@@ -128,6 +128,10 @@ html {
 }
 .cupSection .cupSectionPodsekcja__cupDiv span {
   font-size: 1.2rem;
+}
+.cupSection .cupSectionPodsekcja__cupDiv .cupDiv__image {
+  width: 120%;
+  height: 120%;
 }
 .cupSection .cupSectionPodsekcja button {
   background-color: #b1d7f8;
@@ -146,9 +150,11 @@ html {
   width: 50%;
   margin: 0 auto;
   gap: 0.3rem;
+  font-size: 1.5rem;
 }
 .inputSection input {
   margin-bottom: 1.5rem;
+  margin-top: 0.25rem;
   padding: 0.5rem 1rem;
 }
 .inputSection .submitDiv {
@@ -161,6 +167,8 @@ html {
   border-radius: 0.5rem;
   border: 1px solid #54a8ef;
   background-color: #73b7f2;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .inputSection .submitDiv .clearStorage {
   padding: 0.5rem 1rem;
@@ -188,4 +196,5 @@ html {
   border: 1px solid #73b7f2;
   background-color: #d0e7fb;
   margin-top: 5%;
+  font-size: 1.7rem;
 }/*# sourceMappingURL=main.css.map */

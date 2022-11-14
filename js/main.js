@@ -1,87 +1,88 @@
-const cupVolumes = document.querySelectorAll('.CupVol')
-const progressBar = document.querySelector('.bar')
-const currentVolume = document.querySelector('#currentVolume')
-const congratsText = document.querySelector('.missionCompleteText')
-const maxVolume = document.querySelector('#maxVolume')
-const resetProgressButton = document.querySelector('.resetYourDayButton')
-const welcomeText = document.querySelector('#greet')
-console.log(welcomeText.innerHTML)
+const elements = {
+    cupVolumes : document.querySelectorAll('.CupVol'),
+    progressBar : document.querySelector('.bar'),
+    currentVolume : document.querySelector('#currentVolume'),
+    congratsText : document.querySelector('.missionCompleteText'),
+    maxVolume : document.querySelector('#maxVolume'),
+    resetProgressButton : document.querySelector('.resetYourDayButton'),
+    welcomeText : document.querySelector('#greet'),
+    progressValue : document.querySelector('progress'),//
+    userName : document.querySelector('.username'),
+    userCupSize : document.querySelector('.favCupVol'),
+    yourCup : document.querySelector('.cupDiv__yourCup'),
+    cups : document.querySelectorAll('.cupDiv__image'),
+}
 
-const cups = document.querySelectorAll('.cupDiv__image')  // zmienić by klikało się w cupsa
-cups.forEach((el) => {
+//////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
+elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
 })
-
-resetProgressButton.addEventListener('click', resetProgressBar)
-
-let progressValue = document.querySelector('progress')
+elements.resetProgressButton.addEventListener('click', resetProgressBar)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function FillProgressBarByClickingCupImage() {
     let progress = Number(this.dataset.size)
-    progressValue.value += progress
-    localStorage.setItem('progress',`${progressValue.value}`)
-    currentVolume.innerText = `${localStorage.getItem('progress')} ml`
+    elements.progressValue.value += progress
+    localStorage.setItem('progress',`${elements.progressValue.value}`)
+    elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
     showSaveMaggase()
 }
 
 
 function setNameForGreetingAndUserCupSize() {
-    const userName = document.querySelector('.username')
     if(localStorage.getItem('name') == null){
-        userName.innerText = 'Stranger'
+        elements.userName.innerText = 'Stranger'
     } else {
-        welcomeText.innerHTML = `Hello <span class=\"username\">${localStorage.getItem('name')}</span>!<br> Enjoy drinking some water.`
-        userName.innerText = localStorage.getItem('name')
+        elements.welcomeText.innerHTML = `Hello <span class=\"username\">${localStorage.getItem('name')}</span>!<br> Enjoy drinking some water.`
+        elements.userName.innerText = localStorage.getItem('name')
     }
    
-    const userCupSize = document.querySelector('.favCupVol')
     if(localStorage.getItem('cupSize') == null){
-        userCupSize.innerText = 'Your cup (ml)'
+        elements.userCupSize.innerText = 'Your cup (ml)'
     } else {
-        userCupSize.innerText = `${localStorage.getItem('cupSize')} ml`
-        const yourCup = document.querySelector('.cupDiv__yourCup')
-        yourCup.dataset.size = localStorage.getItem('cupSize')
+        elements.userCupSize.innerText = `${localStorage.getItem('cupSize')} ml`
+        elements.yourCup.dataset.size = localStorage.getItem('cupSize')
     }
     
 }
 
 function calculateMaxWaterPerDayForUser() {
     if(localStorage.getItem('weight') == null){
-        maxVolume.innerText = '1900 ml'
-        progressBar.max = 1900
-        currentVolume.innerText = `${localStorage.getItem('progress')} ml`
+        elements.maxVolume.innerText = '1900 ml'
+        elements.progressBar.max = 1900
+        elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
     }
     else{
-        maxVolume.innerText = `${Math.floor(localStorage.getItem('weight')*35)} ml`
-        progressBar.max = `${Math.floor(localStorage.getItem('weight')*35)}`
+        elements.maxVolume.innerText = `${Math.floor(localStorage.getItem('weight')*35)} ml`
+        elements.progressBar.max = `${Math.floor(localStorage.getItem('weight')*35)}`
     }
 }
 
 
 function showSaveMaggase() {
-    if(localStorage.getItem('progress') == progressBar.max){
-        congratsText.style.display = 'block'
-        resetProgressButton.style.display = 'flex'
+    if(localStorage.getItem('progress') == elements.progressBar.max){
+        elements.congratsText.style.display = 'block'
+        elements.resetProgressButton.style.display = 'flex'
     }
 }
 
 function resetProgressBar() {
-    progressValue.value = 0
-    congratsText.style.display = 'none'
-    resetProgressButton.style.display = 'none'
-    currentVolume.innerText = `${progressValue.value} ml`
+    elements.progressValue.value = 0
+    elements.congratsText.style.display = 'none'
+    elements.resetProgressButton.style.display = 'none'
+    elements.currentVolume.innerText = `${elements.progressValue.value} ml`
     localStorage.setItem('progress', `0`);
 }
 
 function loadCurrentVolumeFromLocalStorage() {
-    currentVolume.innerText = `${localStorage.getItem('progress')} ml`
-    progressBar.attributes[1].nodeValue = localStorage.getItem('progress')
+    elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
+    elements.progressBar.attributes[1].nodeValue = localStorage.getItem('progress')
 }
 
 function checkForComplete() { 
-    if(localStorage.getItem('progress') == progressBar.max){
-        congratsText.style.display = 'block'
-        resetProgressButton.style.display = 'flex'
+    if(localStorage.getItem('progress') == elements.progressBar.max){
+        elements.congratsText.style.display = 'block'
+        elements.elements.resetProgressButton.style.display = 'block'
     }
 }
 
@@ -98,5 +99,5 @@ checkForComplete()
 checkForCurrentProgressIsNull()
 
 if(localStorage.getItem('progressValue') == null){
-    console.log(localStorage.getItem('progressValue'))
+   (localStorage.getItem('progressValue'))
 } 

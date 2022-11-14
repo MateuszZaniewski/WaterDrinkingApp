@@ -1,8 +1,16 @@
-const saveButton = document.querySelector('.submit')
-saveButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
-const saveMassage = document.querySelector('.saveMassage__text')
-const clearStorageButton = document.querySelector('.clearStorage')
-clearStorageButton.addEventListener('click', clearLocalStorage)
+const settings = {
+    saveButton : document.querySelector('.submit'),
+    saveMassage : document.querySelector('.saveMassage__text'),
+    clearStorageButton : document.querySelector('.clearStorage'),
+    userName : document.querySelector('#name'),
+    userWeight : document.querySelector('#weight'),
+    userCupSize : document.querySelector('#cupSize'),
+
+}
+//////////////////////////////// Event Listeners ///////////////////////////////////////////////////////////////////
+settings.saveButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
+settings.clearStorageButton.addEventListener('click', clearLocalStorage)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
@@ -15,21 +23,18 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('gender', `${gender}`);
     localStorage.setItem('cupSize', `${cupSize}`);
     localStorage.setItem('progress', `0`);
-    saveMassage.style.display = 'block'
+    settings.saveMassage.style.display = 'block'
     setTimeout(showSaveMaggase, 3000)
 }
 
 function showSaveMaggase(){
-    saveMassage.style.display = 'none'
+    settings.saveMassage.style.display = 'none'
 }
 
 function populateHTMLFormsWithLocalStorageData() {
-    const userName = document.querySelector('#name') // imie
-    const userWeight = document.querySelector('#weight') // waga
-    const userCupSize = document.querySelector('#cupSize') // wielkość kubka
-    userName.value = localStorage.getItem('name')
-    userWeight.value = localStorage.getItem('weight')
-    userCupSize.value = localStorage.getItem('cupSize')
+    settings.userName.value = localStorage.getItem('name')
+    settings.userWeight.value = localStorage.getItem('weight')
+    settings.userCupSize.value = localStorage.getItem('cupSize')
 }
 
 function setNameForGreeting() {
@@ -39,10 +44,7 @@ function setNameForGreeting() {
 
 function clearLocalStorage() {
     localStorage.clear()
-    clearMassage.style.display = 'block'
-    setTimeout(showSaveMaggase, 3000)
 }
-
 
 populateHTMLFormsWithLocalStorageData()
 setNameForGreeting()
