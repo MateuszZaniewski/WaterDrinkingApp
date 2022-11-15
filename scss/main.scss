@@ -14,18 +14,28 @@ html {
     font-size: 62.5%;
 }
 
+body{
+    max-width: 620px;
+    margin: 0 auto;
+}
+
 .hidden{
     display: block;
 }
 
 .headerNav {
-    font-size: 1.7rem;
+    font-size: clamp(1rem, 5vw, 2.7rem);
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    padding-top: 7%;
-    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10vw, 25vw, 250px);
+    padding-top: min(2rem, 5%);
+    padding-bottom: min(2rem, 5%);
     background-color: $blueShade6;
+    margin: 0 auto;
+    max-width: 620px;
+    border-radius: 0 0 2rem 2rem;
 
     i, a {
         color: white;
@@ -37,11 +47,13 @@ html {
     }
 
     span:hover{
-        border-bottom: 1px solid white;
+        border-bottom: 2px solid white;
+        border-radius: 0 0 0.4rem 0.4rem;
     }
 
     .underline{
-        border-bottom: 1px solid white;
+        border-bottom: 2px solid white;
+        border-radius: 0 0 0.4rem 0.4rem;
     }
 }
 
@@ -49,19 +61,23 @@ html {
 .kropelekAndText {
     display: flex;
     flex-flow: row nowrap;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 1rem 0;
 
     #kropelekImg {
-        width: 35%;
+        width:  35%;
+        max-width: 280px;
         height: 35%;
+        max-height: 310px;
+        min-height: 120px;
     }
 
     .welcomeText {
-        font-size: 1.7rem;
+        font-size: clamp(1.7rem, 4vw, 2.7rem);
+        max-height: 400px;
 
-        .WelcomeTextBox {
+        .welcomeTextBox {
             margin-top: 2rem;
             border: 1px solid $blueShade3;
             align-items: center;
@@ -84,7 +100,7 @@ html {
     justify-content: center;
 
     i {
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, 4vw, 3rem);
     }
 
     progress::-webkit-progress-value {
@@ -96,9 +112,10 @@ html {
     }
 
     .bar{
-        width: 25rem;
+        width: clamp(25rem, 60vw, 50rem);
         border: 0.18rem solid $blueShade8;
-        height: 1.8rem;
+        // height: 1.8rem;
+        height: clamp(1.8rem, 3vh, 2.2rem);
         border-radius: 1rem;
         margin: 0 0.5rem;
         
@@ -153,8 +170,8 @@ html {
             }
 
             .cupDiv__image{
-                width: 120%;
-                height: 120%;
+                width: 60px;
+                height: 60px;
             }
         }
 
@@ -242,6 +259,13 @@ html {
     }
 
 }
+
+
+@media screen and (min-width: 400px) and (max-width: 760px){
+
+}
+
+
 
 
 
