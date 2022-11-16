@@ -9,11 +9,14 @@
 
 html {
   font-size: 62.5%;
+  background-color: #dbd6d6;
 }
 
 body {
   max-width: 620px;
   margin: 0 auto;
+  background-color: #ffffff;
+  height: 100%;
 }
 
 .hidden {
@@ -21,14 +24,14 @@ body {
 }
 
 .headerNav {
-  font-size: clamp(1rem, 5vw, 2.7rem);
+  font-size: clamp(1rem, 5vw, 2rem);
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   gap: clamp(10vw, 25vw, 250px);
-  padding-top: min(2rem, 5%);
-  padding-bottom: min(2rem, 5%);
+  padding-top: 1.6rem;
+  padding-bottom: min(1.6rem, 5%);
   background-color: #54a8ef;
   margin: 0 auto;
   max-width: 620px;
@@ -65,7 +68,7 @@ body {
   min-height: 120px;
 }
 .kropelekAndText .welcomeText {
-  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-size: clamp(1.7rem, 5vw, 2rem);
   max-height: 400px;
 }
 .kropelekAndText .welcomeText .welcomeTextBox {
@@ -81,7 +84,7 @@ body {
 }
 
 .status {
-  padding-top: 3rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
 }
@@ -104,7 +107,7 @@ body {
 
 .resultat {
   text-align: center;
-  font-size: clamp(1.5rem, 4vw, 2.7rem);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
   color: black;
   padding-top: 0.5rem;
   padding-bottom: 2rem;
@@ -133,6 +136,12 @@ body {
   width: 80%;
   margin: 0 auto;
   justify-content: space-around;
+}
+.cupSection .cupSectionPodsekcja .fa-glass {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  color: white;
 }
 .cupSection .cupSectionPodsekcja__cupDiv {
   display: flex;
