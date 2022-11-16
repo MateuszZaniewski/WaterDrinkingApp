@@ -112,7 +112,7 @@ body{
     progress::-webkit-progress-value {
         // background: $blueShade6; 
         background-image: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
-        border-radius: 1rem;
+        border-radius: 2rem;
     }
 
     progress::-webkit-progress-bar {
@@ -125,6 +125,7 @@ body{
         height: clamp(1.8rem, 3vh, 2.2rem);
         border-radius: 1rem;
         margin: 0 0.5rem;
+        padding: 0.02rem 0.1rem;
         
     }
 }
@@ -201,6 +202,9 @@ body{
 
 .inputSection {
     
+    width: 90%;
+    margin: 0 auto;
+
     .genders{
         display: flex;
         gap: 2rem;
@@ -211,7 +215,6 @@ body{
         justify-content: left;
         flex-flow: column nowrap;
         width: 50%;
-        padding-left: 2rem;
         gap: 0.3rem;
         font-size: 1.5rem;
     }
