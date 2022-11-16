@@ -91,8 +91,13 @@ body {
 .status i {
   font-size: clamp(1.8rem, 4vw, 3rem);
 }
+.status progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
 .status progress::-webkit-progress-value {
-  background: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
+  background-image: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
   border-radius: 1rem;
 }
 .status progress::-webkit-progress-bar {

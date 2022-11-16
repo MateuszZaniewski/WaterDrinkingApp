@@ -105,10 +105,13 @@ body{
     i {
         font-size: clamp(1.8rem, 4vw, 3rem);
     }
+    progress {
+        appearance: none;
+     }
 
     progress::-webkit-progress-value {
         // background: $blueShade6; 
-        background: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
+        background-image: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
         border-radius: 1rem;
     }
 
