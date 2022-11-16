@@ -12,7 +12,7 @@
 
 html {
     font-size: 62.5%;
-    background-color: #dbd6d6;
+    background-color: #f5f5f5;
 }
 
 body{
@@ -20,6 +20,8 @@ body{
     margin: 0 auto;
     background-color: #ffffff;
     height: 100vh;
+    border-right: 1px ridge $blueShade3;
+    border-left: 1px ridge $blueShade3;
 }
 
 .hidden{
