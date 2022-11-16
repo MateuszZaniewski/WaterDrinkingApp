@@ -16,7 +16,7 @@ body {
   max-width: 620px;
   margin: 0 auto;
   background-color: #ffffff;
-  height: 100%;
+  height: 100vh;
 }
 
 .hidden {
@@ -92,7 +92,8 @@ body {
   font-size: clamp(1.8rem, 4vw, 3rem);
 }
 .status progress::-webkit-progress-value {
-  background: #54a8ef;
+  background: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
+  border-radius: 1rem;
 }
 .status progress::-webkit-progress-bar {
   background-color: #ffffff;
@@ -171,9 +172,10 @@ body {
 }
 .inputSection form {
   display: flex;
+  justify-content: left;
   flex-flow: column nowrap;
   width: 50%;
-  margin: 0 auto;
+  padding-left: 2rem;
   gap: 0.3rem;
   font-size: 1.5rem;
 }
@@ -184,7 +186,8 @@ body {
 }
 .inputSection .submitDiv {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 2rem;
   gap: 3rem;
 }
 .inputSection .submitDiv .submit {
@@ -212,7 +215,7 @@ body {
 }
 
 .resetYourDayButton {
-  justify-content: center;
+  justify-content: left;
   display: none;
 }
 .resetYourDayButton .resetYourProgress {
