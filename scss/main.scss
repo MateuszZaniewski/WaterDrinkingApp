@@ -109,6 +109,7 @@ body{
     }
     progress {
         appearance: none;
+        border-radius: 2rem;
      }
 
     progress::-webkit-progress-value {
@@ -119,6 +120,7 @@ body{
 
     progress::-webkit-progress-bar {
         background-color: #ffffff;
+        border-radius: 2rem;
     }
 
     .bar{

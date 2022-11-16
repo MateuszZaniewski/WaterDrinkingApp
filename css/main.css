@@ -97,6 +97,7 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  border-radius: 2rem;
 }
 .status progress::-webkit-progress-value {
   background-image: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
@@ -104,6 +105,7 @@ body {
 }
 .status progress::-webkit-progress-bar {
   background-color: #ffffff;
+  border-radius: 2rem;
 }
 .status .bar {
   width: clamp(25rem, 60vw, 44rem);
