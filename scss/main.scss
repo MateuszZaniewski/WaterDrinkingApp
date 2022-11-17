@@ -12,7 +12,7 @@
 
 html {
     font-size: 62.5%;
-    background-color: #f5f5f5;
+    background-color: #eff7fe;
     height: 100%;
 }
 
@@ -35,7 +35,7 @@ body{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(10vw, 25vw, 250px);
+    gap: min(7vw, 80px);
     padding-top: 1.6rem;
     padding-bottom: min(1.6rem, 5%);
     background-color: $blueShade6;
@@ -234,8 +234,7 @@ body{
     .submitDiv{
         display: flex;
         justify-content: left;
-        padding-left: 2rem;
-        gap: 3rem;
+        gap: 1rem;
         
 
         .submit{
