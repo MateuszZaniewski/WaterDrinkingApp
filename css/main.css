@@ -269,6 +269,7 @@ body {
   transform: rotate(90deg);
   font-size: 1.7rem;
   letter-spacing: 1px;
+  padding-right: 10px;
 }
 .calendar .calendar__ml {
   display: flex;
