@@ -284,9 +284,64 @@ body{
 }
 
 
-@media screen and (min-width: 400px) and (max-width: 760px){
+.calendar {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+
+    .calendar__scale{
+        height: 300px;
+        width: 80%;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        padding-left: 8px;
+
+        &--day {
+            width: 30px;
+            border: 1px solid $blueShade5;
+            background: $blueShade3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .monday, .thuesday , .wednesday, .thursday, .friday, .saturnday, .sunday{
+            
+            &--span {
+                display: inline-block;
+                position: relative;
+                transform: rotate(90deg);
+                font-size: 1.7rem;
+                letter-spacing: 1px;
+            }
+        }
+
+    }
+
+    .calendar__ml{
+        display: flex;
+        flex-flow: column;
+        gap: 36px;
+        padding-right: 4px;
+        font-size: 1.2rem;
+        text-align: right;
+    }
 
 }
+
+.callendar__day{
+    display: flex;
+    font-size: 1.2rem;
+    width: 72%;
+    margin: 0 auto;
+    gap: 15px;
+    padding-top: 4px;
+
+}
+
 
 
 
