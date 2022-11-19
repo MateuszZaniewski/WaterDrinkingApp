@@ -13,6 +13,8 @@ const elements = {
     cups : document.querySelectorAll('.cupDiv__image'),
 }
 
+
+
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
 elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
@@ -20,12 +22,23 @@ elements.cups.forEach((el) => {
 elements.resetProgressButton.addEventListener('click', resetProgressBar)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+let clicks = 0
+
 function FillProgressBarByClickingCupImage() {
+    if(localStorage.getItem('progress') < Math.floor(localStorage.getItem('weight')*35)){
+        clicks++
+        localStorage.setItem('cups', `${clicks}`)
+    } 
+    else if(localStorage.getItem('progress') <= Math.floor(localStorage.getItem('weight')*35)){
+        clicks = clicks
+    }
     let progress = Number(this.dataset.size)
     elements.progressValue.value += progress
     localStorage.setItem('progress',`${elements.progressValue.value}`)
     elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
     showSaveMaggase()
+    console.log(localStorage.getItem('progress'))
+    console.log(Math.floor(localStorage.getItem('weight')*35))
 }
 
 
@@ -72,6 +85,8 @@ function resetProgressBar() {
     elements.resetProgressButton.style.display = 'none'
     elements.currentVolume.innerText = `${elements.progressValue.value} ml`
     localStorage.setItem('progress', `0`);
+    clicks = 0
+    localStorage.setItem('cups', `0`)
 }
 
 function loadCurrentVolumeFromLocalStorage() {
@@ -101,3 +116,5 @@ checkForCurrentProgressIsNull()
 if(localStorage.getItem('progressValue') == null){
    (localStorage.getItem('progressValue'))
 } 
+
+console.log(clicks)
