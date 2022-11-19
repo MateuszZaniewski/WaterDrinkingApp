@@ -295,4 +295,10 @@ body {
   width: 90%;
   margin: 0 auto;
   border: 1px solid black;
+  font-size: 1.7rem;
+  text-align: center;
+  gap: 2rem;
+}
+.statistic__AveragePerDay span, .statistic__AveragePerGlass span, .statistic__AverageComplete span {
+  background-color: #b1d7f8;
 }/*# sourceMappingURL=main.css.map */

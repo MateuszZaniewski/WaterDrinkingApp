@@ -351,6 +351,16 @@ body{
     width: 90%;
     margin: 0 auto;
     border: 1px solid black;
+    font-size: 1.7rem;
+    text-align: center;
+    gap: 2rem;
+
+    &__AveragePerDay, &__AveragePerGlass, &__AverageComplete {
+        span {
+            background-color: $blueShade3;
+
+        }
+    }
 }
 
 
