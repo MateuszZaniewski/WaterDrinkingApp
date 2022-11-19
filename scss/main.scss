@@ -347,17 +347,19 @@ body{
 .statistic {
     display: flex;
     flex-flow: column nowrap;
-    height: 300px;
+    height: auto;
     width: 90%;
     margin: 0 auto;
-    border: 1px solid black;
     font-size: 1.7rem;
-    text-align: center;
+    text-align: left;
     gap: 2rem;
+    padding-top: 3rem;
 
     &__AveragePerDay, &__AveragePerGlass, &__AverageComplete {
         span {
             background-color: $blueShade3;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
 
         }
     }

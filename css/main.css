@@ -291,14 +291,16 @@ body {
 .statistic {
   display: flex;
   flex-flow: column nowrap;
-  height: 300px;
+  height: auto;
   width: 90%;
   margin: 0 auto;
-  border: 1px solid black;
   font-size: 1.7rem;
-  text-align: center;
+  text-align: left;
   gap: 2rem;
+  padding-top: 3rem;
 }
 .statistic__AveragePerDay span, .statistic__AveragePerGlass span, .statistic__AverageComplete span {
   background-color: #b1d7f8;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
 }/*# sourceMappingURL=main.css.map */

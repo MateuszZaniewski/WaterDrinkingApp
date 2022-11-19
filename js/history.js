@@ -1,5 +1,7 @@
 const calendar = {
     dataSpan : document.querySelectorAll('.calendar__ml--span'),
+    scale : document.querySelector('.calendar__scale'),
+    ml : document.querySelector('.calendar__ml'),
     values : {
         value1 : document.querySelector('.dataValue1'),
         value2 : document.querySelector('.dataValue2'),
@@ -24,15 +26,10 @@ function findAndSetValuesForToday () {
     for(let i = 0; i < 7; i++){
         if(data.getDay() == i){
             localStorage.setItem(`day${i}`, `${localStorage.getItem('progress')}`)
-            calendar.days[i-1].style.height = `${localStorage.getItem(`day${i}`)/10}px`
+            calendar.days[i-1].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
         }
     }
 }
-
-function makeColorIfDayIsCompleted() {
-    
-}
-
 
 function setValuesForChartInMl () {
     if(localStorage.getItem('weight') == null){
@@ -72,7 +69,6 @@ function setNameForGreeting() {
 setValuesForChartInMl()
 setNameForGreeting()
 findAndSetValuesForToday()
-makeColorIfDayIsCompleted()
 
 
 //https://www.codester.com/items/18487/water-drinking-reminder-android-app-template
