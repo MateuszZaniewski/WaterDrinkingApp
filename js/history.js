@@ -13,13 +13,13 @@ const calendar = {
         value5 : document.querySelector('.dataValue5'),
         value6 : document.querySelector('.dataValue6'),
     },
-    days : [document.querySelector('.monday'), 
+    days : [document.querySelector('.sunday'),
+            document.querySelector('.monday'), 
             document.querySelector('.thuesday'),
             document.querySelector('.wednesday'),
             document.querySelector('.thursday'),
             document.querySelector('.friday'),
             document.querySelector('.saturnday'),
-            document.querySelector('.sunday'),
     ],}
 
 function setLocalStorageValuesForDaysOfWeek(){
@@ -34,8 +34,14 @@ function findAndSetValuesForToday () {
     for(let i = 0; i < 7; i++){
         if(data.getDay() == i){
             localStorage.setItem(`day${i}`, `${localStorage.getItem('progress')}`)
-            calendar.days[i-1].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
+            calendar.days[i].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
         }}}
+
+function setValuesForSpecificDayOfWeek() {
+    for(let i = 0; i < 7; i++){
+        calendar.days[i].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
+    }
+}
 
 function setValuesForChartInMl () {
     if(localStorage.getItem('weight') == null){
@@ -82,6 +88,8 @@ function calculateAverageSuccessRate() {
 
 }
 
+const data = new Date()
+console.log(data.getDay())
 
 
 
@@ -97,5 +105,6 @@ setNameForGreeting()
 findAndSetValuesForToday()
 calculateAverageMlPerDay()
 calculateAverageMlPerGlass()
+setValuesForSpecificDayOfWeek()
 
 //https://www.codester.com/items/18487/water-drinking-reminder-android-app-template
