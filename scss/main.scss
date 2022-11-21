@@ -158,6 +158,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
+    padding-bottom: 3rem;
 
     
 
@@ -208,6 +209,7 @@ body{
     
     width: 90%;
     margin: 0 auto;
+    padding-bottom: 3rem;
 
     .genders{
         display: flex;
@@ -304,7 +306,7 @@ body{
             background: $blueShade3;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center;    
         }
 
         .monday, .thuesday , .wednesday, .thursday, .friday, .saturnday, .sunday{
@@ -335,10 +337,10 @@ body{
 .callendar__day{
     display: flex;
     font-size: 1.2rem;
-    width: 72%;
     margin: 0 auto;
-    gap: 15px;
     padding-top: 4px;
+    padding-left: 54px;
+    gap: 14px;
 
 }
 
@@ -354,8 +356,9 @@ body{
     text-align: left;
     gap: 2rem;
     padding-top: 3rem;
+    padding-bottom: 3rem;
 
-    &__AveragePerDay, &__AveragePerGlass, &__AverageComplete {
+    &__AveragePerDay, &__AveragePerGlass {
         span {
             background-color: $blueShade3;
             padding: 0.5rem 1rem;
@@ -365,4 +368,9 @@ body{
     }
 }
 
-
+@media screen and (min-width: 600px){
+    .callendar__day{
+        padding-left: 70px;
+        gap: 15.5px;
+    }
+}

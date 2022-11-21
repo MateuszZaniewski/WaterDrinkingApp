@@ -107,7 +107,14 @@ function checkForCurrentProgressIsNull() {
     if(localStorage.getItem(`day${day}Progress`) == null){
         localStorage.setItem(`day${day}Progress`, `0`);
     }
+        for(let i = 0; i < 7; i++){
+            if(localStorage.getItem(`day${i}Progress`) == null){
+                localStorage.setItem(`day${i}Progress`, 0)
+            }
+        }
 }
+
+
 
 setNameForGreetingAndUserCupSize()
 calculateMaxWaterPerDayForUser()

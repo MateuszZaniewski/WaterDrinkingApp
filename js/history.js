@@ -4,7 +4,6 @@ const calendar = {
     ml : document.querySelector('.calendar__ml'),
     averagePerDay : document.querySelector('.averagePerDay'),
     averagePerGlass : document.querySelector('.averagePerGlass'),
-    averageSuccessRate : document.querySelector('.averageSuccessRate'),
     values : {
         value1 : document.querySelector('.dataValue1'),
         value2 : document.querySelector('.dataValue2'),
@@ -20,10 +19,20 @@ const calendar = {
             document.querySelector('.thursday'),
             document.querySelector('.friday'),
             document.querySelector('.saturnday'),
-    ],}
+    ],
+    valuesSpans : [document.querySelector('.sunday--span'),
+                   document.querySelector('.monday--span'),
+                   document.querySelector('.thuesday--span'),
+                   document.querySelector('.wednesday--span'),
+                   document.querySelector('.thursday--span'),
+                   document.querySelector('.friday--span'),
+                   document.querySelector('.saturnday--span'),],
+}
 
     const data = new Date()
     let day = data.getDay()
+
+    console.log(calendar.valuesSpans)
 
 function setLocalStorageValuesForDaysOfWeek(){
         if(localStorage.getItem(`day${day}`) == null)
@@ -40,8 +49,10 @@ function setValuesForSpecificDayOfWeek() {
     }
 }
 
-function loadCurrentVolumeFromLocalStorage() {
-    
+function loadCurrentVolumeFromLocalStorageIntoColumnSpans() {
+    for(let i = 0; i < 7; i++){
+            calendar.valuesSpans[i].innerText = localStorage.getItem(`day${i}Progress`)
+    }
 }
 
 function setValuesForChartInMl () {
@@ -83,16 +94,13 @@ function calculateAverageMlPerGlass() {
     calendar.averagePerGlass.innerText = `Average ml per glass : ${Math.floor(average/localStorage.getItem('cups'))} ml`
 }
 
-function calculateAverageSuccessRate() {
-
+function initiateProgressValuesIfTheyNotExist() {
+    for(let i = 0; i < 7; i++){
+        if(localStorage.getItem(`day${i}Progress`) == null){
+            localStorage.setItem(`day${i}Progress`, 0)
+        }
+    }
 }
-
-
-
-
-
-
-
 
 
 setLocalStorageValuesForDaysOfWeek()
@@ -102,5 +110,5 @@ findAndSetValuesForToday()
 calculateAverageMlPerDay()
 calculateAverageMlPerGlass()
 setValuesForSpecificDayOfWeek()
-
-//https://www.codester.com/items/18487/water-drinking-reminder-android-app-template
+loadCurrentVolumeFromLocalStorageIntoColumnSpans()
+initiateProgressValuesIfTheyNotExist()
