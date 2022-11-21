@@ -22,7 +22,6 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('gender', `${gender}`);
     localStorage.setItem('cupSize', `${cupSize}`);
-    localStorage.setItem('progress', `0`);
     settings.saveMassage.style.display = 'block'
     setTimeout(showSaveMaggase, 3000)
 }

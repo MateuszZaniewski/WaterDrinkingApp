@@ -22,25 +22,26 @@ const calendar = {
             document.querySelector('.saturnday'),
     ],}
 
-function setLocalStorageValuesForDaysOfWeek(){
-    for(let i = 0; i < 7; i++){
-        if(localStorage.getItem(`day${i}`) == null){
-            localStorage.setItem(`day${i}`, 0)
-        }}}
+    const data = new Date()
+    let day = data.getDay()
 
+function setLocalStorageValuesForDaysOfWeek(){
+        if(localStorage.getItem(`day${day}`) == null)
+            localStorage.setItem(`day${day}`, 0)
+        }
 
 function findAndSetValuesForToday () {
-    const data = new Date()
-    for(let i = 0; i < 7; i++){
-        if(data.getDay() == i){
-            localStorage.setItem(`day${i}`, `${localStorage.getItem('progress')}`)
-            calendar.days[i].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
-        }}}
+                localStorage.setItem(`day${day}`, `${localStorage.getItem(`day${day}Progress`)}`)
+        }
 
 function setValuesForSpecificDayOfWeek() {
     for(let i = 0; i < 7; i++){
-        calendar.days[i].style.height = `${(localStorage.getItem(`day${i}`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
+        calendar.days[i].style.height = `${(localStorage.getItem(`day${i}Progress`)/Math.floor(localStorage.getItem('weight')*35))*100}%`
     }
+}
+
+function loadCurrentVolumeFromLocalStorage() {
+    
 }
 
 function setValuesForChartInMl () {
@@ -68,9 +69,8 @@ function setNameForGreeting() {
 function calculateAverageMlPerDay() {
     let average = 0
     for(let i = 0; i < 7; i++){
-        average += Number(`${localStorage.getItem(`day${i}`)}`)
+        average += Number(`${localStorage.getItem(`day${day}`)}`)
     }
-    console.log(average)
     calendar.averagePerDay.innerText = `Average ml per day : ${Math.floor(average/7)} ml`
 }
 
@@ -78,18 +78,14 @@ function calculateAverageMlPerGlass() {
     localStorage.getItem('cups')
     let average = 0
     for(let i = 0; i < 7; i++){
-        average += Number(`${localStorage.getItem(`day${i}`)}`)
+        average += Number(`${localStorage.getItem(`day${day}`)}`)
     }
-    console.log(average)
     calendar.averagePerGlass.innerText = `Average ml per glass : ${Math.floor(average/localStorage.getItem('cups'))} ml`
 }
 
 function calculateAverageSuccessRate() {
 
 }
-
-const data = new Date()
-console.log(data.getDay())
 
 
 

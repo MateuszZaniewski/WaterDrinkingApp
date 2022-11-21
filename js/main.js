@@ -13,8 +13,6 @@ const elements = {
     cups : document.querySelectorAll('.cupDiv__image'),
 }
 
-
-
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
 elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
@@ -23,21 +21,25 @@ elements.resetProgressButton.addEventListener('click', resetProgressBar)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let clicks = 0
+const data = new Date()
+let day = data.getDay()
+
 
 function FillProgressBarByClickingCupImage() {
-    if(localStorage.getItem('progress') < Math.floor(localStorage.getItem('weight')*35)){
+    if(localStorage.getItem(`day${day}Progress`) < Math.floor(localStorage.getItem('weight')*35)){
         clicks++
         localStorage.setItem('cups', `${clicks}`)
+
     } 
-    else if(localStorage.getItem('progress') <= Math.floor(localStorage.getItem('weight')*35)){
+    else if(localStorage.getItem(`day${day}Progress`) <= Math.floor(localStorage.getItem('weight')*35)){
         clicks = clicks
     }
     let progress = Number(this.dataset.size)
     elements.progressValue.value += progress
-    localStorage.setItem('progress',`${elements.progressValue.value}`)
-    elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
+    localStorage.setItem(`day${day}Progress`,`${elements.progressValue.value}`)
+    elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
     showSaveMaggase()
-    console.log(localStorage.getItem('progress'))
+    console.log(localStorage.getItem(`day${day}Progress`))
     console.log(Math.floor(localStorage.getItem('weight')*35))
 }
 
@@ -63,7 +65,7 @@ function calculateMaxWaterPerDayForUser() {
     if(localStorage.getItem('weight') == null){
         elements.maxVolume.innerText = '1900 ml'
         elements.progressBar.max = 1900
-        elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
+        elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
     }
     else{
         elements.maxVolume.innerText = `${Math.floor(localStorage.getItem('weight')*35)} ml`
@@ -73,7 +75,7 @@ function calculateMaxWaterPerDayForUser() {
 
 
 function showSaveMaggase() {
-    if(localStorage.getItem('progress') == elements.progressBar.max){
+    if(localStorage.getItem(`day${day}Progress`) == elements.progressBar.max){
         elements.congratsText.style.display = 'block'
         elements.resetProgressButton.style.display = 'flex'
     }
@@ -84,26 +86,26 @@ function resetProgressBar() {
     elements.congratsText.style.display = 'none'
     elements.resetProgressButton.style.display = 'none'
     elements.currentVolume.innerText = `${elements.progressValue.value} ml`
-    localStorage.setItem('progress', `0`);
+    localStorage.setItem(`day${day}Progress`, `0`);
     clicks = 0
     localStorage.setItem('cups', `0`)
 }
 
 function loadCurrentVolumeFromLocalStorage() {
-    elements.currentVolume.innerText = `${localStorage.getItem('progress')} ml`
-    elements.progressBar.attributes[1].nodeValue = localStorage.getItem('progress')
+    elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
+    elements.progressBar.attributes[1].nodeValue = localStorage.getItem(`day${day}Progress`)
 }
 
 function checkForComplete() { 
-    if(localStorage.getItem('progress') == elements.progressBar.max){
+    if(localStorage.getItem(`day${day}Progress`) == elements.progressBar.max){
         elements.congratsText.style.display = 'block'
         elements.elements.resetProgressButton.style.display = 'block'
     }
 }
 
 function checkForCurrentProgressIsNull() {
-    if(localStorage.getItem('progress') == null){
-        localStorage.setItem('progress', `0`);
+    if(localStorage.getItem(`day${day}Progress`) == null){
+        localStorage.setItem(`day${day}Progress`, `0`);
     }
 }
 
