@@ -11,6 +11,15 @@ const elements = {
     userCupSize : document.querySelector('.favCupVol'),
     yourCup : document.querySelector('.cupDiv__yourCup'),
     cups : document.querySelectorAll('.cupDiv__image'),
+    unregistered : document.querySelector('.forNewUsersOnly'),
+    registered : document.querySelector('.registeredUsersOnly')
+}
+
+const unregisteredElements = {
+    inputName : document.querySelector('#name'),
+    inputWeight : document.querySelector('#weight'),
+    inputCupSize : document.querySelector('#cupSize'),
+    submitButon : document.querySelector('.submit')
 }
 
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
@@ -18,7 +27,30 @@ elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
 })
 elements.resetProgressButton.addEventListener('click', resetProgressBar)
+unregisteredElements.submitButon.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function displayWelcomeIntroOrActualSite () {
+    if(localStorage.getItem('name') == null){
+        elements.unregistered.style.display = 'block'
+        elements.registered.style.display = 'none'
+    }
+    else {
+        elements.registered.style.display = 'block'
+        elements.unregistered.style.display = 'none'
+    }
+}
+
+function grabValuesFromSettingsFormAndAddToLocalStorage(){
+    let name = document.querySelector('#name').value
+    let weight = document.querySelector('#weight').value
+    let cupSize = document.querySelector('#cupSize').value
+    console.log(name, weight, cupSize)
+    localStorage.setItem('name', `${name}`);
+    localStorage.setItem('weight', `${weight}`);
+    localStorage.setItem('cupSize', `${cupSize}`);
+    location.reload()
+}
 
 let clicks = 0
 const data = new Date()
@@ -99,8 +131,8 @@ function loadCurrentVolumeFromLocalStorage() {
 function checkForComplete() { 
     if(localStorage.getItem(`day${day}Progress`) == elements.progressBar.max){
         elements.congratsText.style.display = 'block'
-        elements.elements.resetProgressButton.style.display = 'block'
-    }
+        elements.resetProgressButton.style.display = 'block'
+    } 
 }
 
 function checkForCurrentProgressIsNull() {
@@ -116,9 +148,15 @@ function checkForCurrentProgressIsNull() {
 
 
 
-setNameForGreetingAndUserCupSize()
-calculateMaxWaterPerDayForUser()
-loadCurrentVolumeFromLocalStorage()
+
+displayWelcomeIntroOrActualSite()  // works
+setNameForGreetingAndUserCupSize() // works
+
+
+calculateMaxWaterPerDayForUser() // works
+loadCurrentVolumeFromLocalStorage() // works
+
+
 checkForComplete()
 checkForCurrentProgressIsNull()
 
