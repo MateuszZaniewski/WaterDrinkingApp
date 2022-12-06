@@ -50,6 +50,8 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('cupSize', `${cupSize}`);
     location.reload()
+    
+
 }
 
 let clicks = 0
@@ -157,7 +159,7 @@ calculateMaxWaterPerDayForUser() // works
 loadCurrentVolumeFromLocalStorage() // works
 
 
-checkForComplete()
+checkForComplete() // works
 checkForCurrentProgressIsNull()
 
 if(localStorage.getItem('progressValue') == null){

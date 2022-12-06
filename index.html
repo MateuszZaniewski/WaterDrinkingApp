@@ -95,16 +95,18 @@
             <div class="dataEnterDiv">
                 <form action="/setUserData">
                     <label for="Name">Your name</label>
-                    <input type="text" name="" id="name" placeholder="Enter Your name">
+                    <input type="text" required name="" id="name" placeholder="Enter Your name">
         
                     <label for="Weight">Your weight(kg)</label>
-                    <input type="number" name="" id="weight" placeholder="Enter Your weight">
+                    <input type="number" required name="" id="weight" placeholder="Enter Your weight">
         
                     <label for="CupSize">Your favourite cup size(ml)</label>
-                    <input type="number" name="" id="cupSize" placeholder="Your favourite cup size">
+                    <input type="number" required name="" id="cupSize" placeholder="Your favourite cup size">
+
+                    <input type="submit" value="Save"> 
                 </form>
                 <div class="submitDiv">
-                    <button class="submit">Save</button>
+                    <button type="submit" class="submit">Save</button>
                 </div>
             </div>
         </div>

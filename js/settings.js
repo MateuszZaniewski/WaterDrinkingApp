@@ -42,7 +42,15 @@ function setNameForGreeting() {
 }
 
 function clearLocalStorage() {
-    localStorage.clear()
+    if (confirm('Are You sure, You want to clear your data and progress?')) {
+        // Save it!
+        localStorage.clear()
+        console.log('Progress cleared');
+      } else {
+        // Do nothing!
+        console.log('Your safe');
+      }
+    
 }
 
 populateHTMLFormsWithLocalStorageData()
