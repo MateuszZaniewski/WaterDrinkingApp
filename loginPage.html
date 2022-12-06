@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/32c97c3ba8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="loginInfoDiv">
+        <h1>Welcome in the Water Drinking Application</h1>
+        <p>This Application will help You manage your daily water intake, measure Your progress of reaching daily goals and in general - will help You feel better in Your hydrated body</p>
+        <span>To ensure Your daily goal is calculated properly, please enter Your data</span>
+    </div>
+    <div class="dataAndImg">
+        <div class="kropelekImgDiv">
+            <img src="/assets/kropelek.png" alt="">
+        </div>
+        <div class="dataEnterDiv">
+            <form action="/setUserData">
+                <label for="Name">Your name</label>
+                <input type="text" name="" id="name" placeholder="Enter Your name">
+    
+                <label for="Weight">Your weight(kg)</label>
+                <input type="number" name="" id="weight" placeholder="Enter Your weight">
+    
+                <label for="CupSize">Your favourite cup size(ml)</label>
+                <input type="number" name="" id="cupSize" placeholder="Your favourite cup size">
+            </form>
+            <div class="submitDiv">
+                <button class="submit">Save</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/settings.js"></script>
+</body>
+</html>

@@ -58,6 +58,7 @@ body {
 .kropelekAndText {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   width: 90%;
   margin: 0 auto;
   padding: 1rem 0;
@@ -306,6 +307,51 @@ body {
   background-color: #b1d7f8;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+}
+
+.loginInfoDiv {
+  padding-top: 8%;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.loginInfoDiv h1, .loginInfoDiv p, .loginInfoDiv span {
+  padding-bottom: 8%;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.dataAndImg {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  gap: 5vw;
+  padding-top: 8%;
+}
+.dataAndImg .dataEnterDiv {
+  width: 90%;
+  margin: 0 auto;
+}
+.dataAndImg .dataEnterDiv form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.dataAndImg .dataEnterDiv form label {
+  padding: 4% 0;
+}
+.dataAndImg .dataEnterDiv form input {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+}
+.dataAndImg .dataEnterDiv .submitDiv {
+  padding: 5% 0;
+}
+.dataAndImg .dataEnterDiv .submitDiv button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #54a8ef;
+  background-color: #73b7f2;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 600px) {
