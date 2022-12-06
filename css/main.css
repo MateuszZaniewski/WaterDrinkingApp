@@ -309,43 +309,45 @@ body {
   border-radius: 1rem;
 }
 
-.loginInfoDiv {
+.forNewUsersOnly {
+  display: block;
+}
+.forNewUsersOnly .loginInfoDiv {
   padding-top: 8%;
   text-align: center;
   width: 90%;
   margin: 0 auto;
 }
-.loginInfoDiv h1, .loginInfoDiv p, .loginInfoDiv span {
+.forNewUsersOnly .loginInfoDiv h1, .forNewUsersOnly .loginInfoDiv p, .forNewUsersOnly .loginInfoDiv span {
   padding-bottom: 8%;
   font-size: clamp(1.5rem, 5vw, 2rem);
 }
-
-.dataAndImg {
+.forNewUsersOnly .dataAndImg {
   display: flex;
   width: 90%;
   margin: 0 auto;
   gap: 5vw;
   padding-top: 8%;
 }
-.dataAndImg .dataEnterDiv {
+.forNewUsersOnly .dataAndImg .dataEnterDiv {
   width: 90%;
   margin: 0 auto;
 }
-.dataAndImg .dataEnterDiv form {
+.forNewUsersOnly .dataAndImg .dataEnterDiv form {
   display: flex;
   flex-flow: column nowrap;
 }
-.dataAndImg .dataEnterDiv form label {
+.forNewUsersOnly .dataAndImg .dataEnterDiv form label {
   padding: 4% 0;
 }
-.dataAndImg .dataEnterDiv form input {
+.forNewUsersOnly .dataAndImg .dataEnterDiv form input {
   width: 100%;
   padding: 0.25rem 0.5rem;
 }
-.dataAndImg .dataEnterDiv .submitDiv {
+.forNewUsersOnly .dataAndImg .dataEnterDiv .submitDiv {
   padding: 5% 0;
 }
-.dataAndImg .dataEnterDiv .submitDiv button {
+.forNewUsersOnly .dataAndImg .dataEnterDiv .submitDiv button {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid #54a8ef;

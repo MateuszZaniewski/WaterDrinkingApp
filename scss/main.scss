@@ -369,62 +369,68 @@ body{
     }
 }
 
-.loginInfoDiv{
-    padding-top: 8%;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
+.forNewUsersOnly{
 
-    & h1, p, span {
-        padding-bottom: 8%;
-        font-size: clamp(1.5rem, 5vw, 2rem);
-    }
-}
+    display: block;
 
-.dataAndImg {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    gap: 5vw;
-    padding-top: 8%;
-
-
-    .dataEnterDiv{
-
+    .loginInfoDiv{
+        padding-top: 8%;
+        text-align: center;
         width: 90%;
         margin: 0 auto;
     
-    
-        & form {
-            display: flex;
-            flex-flow: column nowrap;
-    
-            & label {
-                padding: 4% 0;
-            }
-    
-            & input {
-                width: 100%;
-                padding: 0.25rem 0.5rem;
-            }
-        }
-
-        .submitDiv {
-            padding: 5% 0;
-
-            & button {
-                padding: 0.5rem 1rem;
-                border-radius: 0.5rem;
-                border: 1px solid $blueShade6;
-                background-color: $blueShade5;
-                font-size: 1.5rem;
-                font-weight: 500;
-            }
-            
+        & h1, p, span {
+            padding-bottom: 8%;
+            font-size: clamp(1.5rem, 5vw, 2rem);
         }
     }
-
+    
+    .dataAndImg {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        gap: 5vw;
+        padding-top: 8%;
+    
+    
+        .dataEnterDiv{
+    
+            width: 90%;
+            margin: 0 auto;
+        
+        
+            & form {
+                display: flex;
+                flex-flow: column nowrap;
+        
+                & label {
+                    padding: 4% 0;
+                }
+        
+                & input {
+                    width: 100%;
+                    padding: 0.25rem 0.5rem;
+                }
+            }
+    
+            .submitDiv {
+                padding: 5% 0;
+    
+                & button {
+                    padding: 0.5rem 1rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid $blueShade6;
+                    background-color: $blueShade5;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+                
+            }
+        }
+    
+    }
 }
+
 
 
 
