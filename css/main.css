@@ -229,6 +229,24 @@ body {
   display: none;
 }
 
+.history {
+  padding-top: 5%;
+}
+.history .historySection {
+  padding-top: 5%;
+}
+.history .historySection .historySection__Container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.history .historySection .historySection__Container .container--day {
+  border: 1px solid #b1d7f8;
+}
+.history .historySection .historySection__Container .container--data {
+  border: 1px solid #b1d7f8;
+}
+
 .resetYourDayButton {
   justify-content: left;
   display: none;
@@ -242,73 +260,6 @@ body {
   font-size: 1.7rem;
 }
 
-.calendar {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-}
-.calendar .calendar__scale {
-  height: 300px;
-  width: 80%;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  padding-left: 8px;
-}
-.calendar .calendar__scale--day {
-  width: 30px;
-  border: 1px solid #73b7f2;
-  background: #b1d7f8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.calendar .calendar__scale .monday--span, .calendar .calendar__scale .thuesday--span, .calendar .calendar__scale .wednesday--span, .calendar .calendar__scale .thursday--span, .calendar .calendar__scale .friday--span, .calendar .calendar__scale .saturnday--span, .calendar .calendar__scale .sunday--span {
-  display: inline-block;
-  position: relative;
-  transform: rotate(90deg);
-  font-size: 1.7rem;
-  letter-spacing: 1px;
-  padding-right: 10px;
-}
-.calendar .calendar__ml {
-  display: flex;
-  flex-flow: column;
-  gap: 36px;
-  padding-right: 4px;
-  font-size: 1.2rem;
-  text-align: right;
-}
-
-.callendar__day {
-  display: flex;
-  font-size: 1.2rem;
-  margin: 0 auto;
-  padding-top: 4px;
-  padding-left: 54px;
-  gap: 14px;
-}
-
-.statistic {
-  display: flex;
-  flex-flow: column nowrap;
-  height: auto;
-  width: 90%;
-  margin: 0 auto;
-  font-size: 1.7rem;
-  text-align: left;
-  gap: 2rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.statistic__AveragePerDay span, .statistic__AveragePerGlass span {
-  background-color: #b1d7f8;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-}
-
 .substractWater {
   display: flex;
   flex-flow: column;
@@ -317,6 +268,7 @@ body {
   margin-right: 5%;
   padding-bottom: 5%;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .substractWater .substractButton {
   display: flex;

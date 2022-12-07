@@ -120,16 +120,11 @@ function toggleSubstractWaterOFF() {
     }
 }
 
-
-
-
-
-
 function setNameForGreetingAndUserCupSize() {
     if(localStorage.getItem('name') == null){
         elements.userName.innerText = 'Stranger'
     } else {
-        elements.welcomeText.innerHTML = `Hello <span class=\"username\">${localStorage.getItem('name')}</span>!<br> Enjoy drinking some water.`
+        elements.welcomeText.innerHTML = `Hello <span class=\"username\">${localStorage.getItem('name')}</span>!<br> Your daily goal is to drink ${Math.floor(localStorage.getItem('weight')*35)} ml of water.`
         elements.userName.innerText = localStorage.getItem('name')
     }
    
@@ -143,15 +138,8 @@ function setNameForGreetingAndUserCupSize() {
 }
 
 function calculateMaxWaterPerDayForUser() {
-    if(localStorage.getItem('weight') == null){
-        elements.maxVolume.innerText = '1900 ml'
-        elements.progressBar.max = 1900
-        elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
-    }
-    else{
         elements.maxVolume.innerText = `${Math.floor(localStorage.getItem('weight')*35)} ml`
         elements.progressBar.max = `${Math.floor(localStorage.getItem('weight')*35)}`
-    }
 }
 
 
@@ -173,8 +161,14 @@ function resetProgressBar() {
 }
 
 function loadCurrentVolumeFromLocalStorage() {
-    elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
-    elements.progressBar.attributes[1].nodeValue = localStorage.getItem(data)
+    if(localStorage.getItem('data') == null){
+        elements.currentVolume.innerText = '0 ml'
+    }
+    else {
+        elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+        elements.progressBar.attributes[1].nodeValue = localStorage.getItem(data)
+    }
+    
 }
 
 function checkForComplete() { 

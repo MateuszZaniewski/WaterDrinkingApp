@@ -269,6 +269,32 @@ body{
     }
 }
 
+.history{
+    padding-top: 5%;
+
+    & .historySection {
+        padding-top: 5%;
+
+        & .historySection__Container{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            & .container--day {
+                border: 1px solid $blueShade3
+            }
+
+            & .container--data {
+                border: 1px solid $blueShade3;
+            }
+        }
+
+    }
+}
+
+
+
+
 
 .resetYourDayButton{
 
@@ -286,90 +312,6 @@ body{
 
 }
 
-
-.calendar {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-
-    .calendar__scale{
-        height: 300px;
-        width: 80%;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        display: flex;
-        align-items: flex-end;
-        gap: 6px;
-        padding-left: 8px;
-
-        &--day {
-            width: 30px;
-            border: 1px solid $blueShade5;
-            background: $blueShade3;
-            display: flex;
-            align-items: center;
-            justify-content: center;    
-        }
-
-        .monday, .thuesday , .wednesday, .thursday, .friday, .saturnday, .sunday{
-            
-            &--span {
-                display: inline-block;
-                position: relative;
-                transform: rotate(90deg);
-                font-size: 1.7rem;
-                letter-spacing: 1px;
-                padding-right: 10px;
-            }
-        }
-
-    }
-
-    .calendar__ml{
-        display: flex;
-        flex-flow: column;
-        gap: 36px;
-        padding-right: 4px;
-        font-size: 1.2rem;
-        text-align: right;
-    }
-
-}
-
-.callendar__day{
-    display: flex;
-    font-size: 1.2rem;
-    margin: 0 auto;
-    padding-top: 4px;
-    padding-left: 54px;
-    gap: 14px;
-
-}
-
-
-
-.statistic {
-    display: flex;
-    flex-flow: column nowrap;
-    height: auto;
-    width: 90%;
-    margin: 0 auto;
-    font-size: 1.7rem;
-    text-align: left;
-    gap: 2rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
-    &__AveragePerDay, &__AveragePerGlass {
-        span {
-            background-color: $blueShade3;
-            padding: 0.5rem 1rem;
-            border-radius: 1rem;
-
-        }
-    }
-}
-
 .substractWater {
     display: flex;
     flex-flow: column;
@@ -378,6 +320,7 @@ body{
     margin-right: 5%;
     padding-bottom: 5%;
     font-size: 1.2rem;
+    cursor: pointer;
 
     & .substractButton {
         display: flex;
