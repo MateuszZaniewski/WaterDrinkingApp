@@ -12,7 +12,9 @@ const elements = {
     yourCup : document.querySelector('.cupDiv__yourCup'),
     cups : document.querySelectorAll('.cupDiv__image'),
     unregistered : document.querySelector('.forNewUsersOnly'),
-    registered : document.querySelector('.registeredUsersOnly')
+    registered : document.querySelector('.registeredUsersOnly'),
+    substractON : document.querySelector('.ON'),
+    substractOFF : document.querySelector('.OFF'),
 }
 
 const unregisteredElements = {
@@ -22,12 +24,16 @@ const unregisteredElements = {
     submitButon : document.querySelector('.submit')
 }
 
+let substractMode = false;
+
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
 elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
 })
 elements.resetProgressButton.addEventListener('click', resetProgressBar)
 unregisteredElements.submitButon.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
+elements.substractON.addEventListener('click', toggleSubstractWaterON)
+elements.substractOFF.addEventListener('click', toggleSubstractWaterOFF)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function displayWelcomeIntroOrActualSite () {
@@ -53,29 +59,63 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     
 
 }
-
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 let clicks = 0
-const data = new Date()
-let day = data.getDay()
+const newDate = new Date()
+const data = newDate.toLocaleDateString("en-US", options)
 
 
 function FillProgressBarByClickingCupImage() {
-    if(localStorage.getItem(`day${day}Progress`) < Math.floor(localStorage.getItem('weight')*35)){
+    if(localStorage.getItem(data) < Math.floor(localStorage.getItem('weight')*35)){
         clicks++
         localStorage.setItem('cups', `${clicks}`)
 
     } 
-    else if(localStorage.getItem(`day${day}Progress`) <= Math.floor(localStorage.getItem('weight')*35)){
+    else if(localStorage.getItem(data) <= Math.floor(localStorage.getItem('weight')*35)){
         clicks = clicks
     }
     let progress = Number(this.dataset.size)
-    elements.progressValue.value += progress
-    localStorage.setItem(`day${day}Progress`,`${elements.progressValue.value}`)
-    elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
+
+    if(substractMode == false){
+        elements.progressValue.value += progress
+        localStorage.setItem(data,`${elements.progressValue.value}`)
+        elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+    } else {
+        if(localStorage.getItem(data) != elements.progressBar.max){
+            elements.progressValue.value -= progress
+            localStorage.setItem(data,`${elements.progressValue.value}`)
+            elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+        }
+    }
+    
+
+
     showSaveMaggase()
-    console.log(localStorage.getItem(`day${day}Progress`))
+    console.log(localStorage.getItem(data))
     console.log(Math.floor(localStorage.getItem('weight')*35))
 }
+
+function toggleSubstractWaterON() {
+    if(elements.substractOFF.style.background = '#b1d7f8'){
+        elements.substractON.style.background = '#b1d7f8'
+        elements.substractOFF.style.background = '#ffffff'
+        substractMode = true
+        return substractMode
+    }
+}
+
+function toggleSubstractWaterOFF() {
+    if(elements.substractON.style.background = '#b1d7f8'){
+        elements.substractOFF.style.background = '#b1d7f8'
+        elements.substractON.style.background = '#ffffff'
+        substractMode = false
+        return substractMode
+    }
+}
+
+
+
+
 
 
 function setNameForGreetingAndUserCupSize() {
@@ -109,7 +149,7 @@ function calculateMaxWaterPerDayForUser() {
 
 
 function showSaveMaggase() {
-    if(localStorage.getItem(`day${day}Progress`) == elements.progressBar.max){
+    if(localStorage.getItem(data) == elements.progressBar.max){
         elements.congratsText.style.display = 'block'
         elements.resetProgressButton.style.display = 'flex'
     }
@@ -120,36 +160,22 @@ function resetProgressBar() {
     elements.congratsText.style.display = 'none'
     elements.resetProgressButton.style.display = 'none'
     elements.currentVolume.innerText = `${elements.progressValue.value} ml`
-    localStorage.setItem(`day${day}Progress`, `0`);
+    localStorage.setItem(data, `0`);
     clicks = 0
     localStorage.setItem('cups', `0`)
 }
 
 function loadCurrentVolumeFromLocalStorage() {
-    elements.currentVolume.innerText = `${localStorage.getItem(`day${day}Progress`)} ml`
-    elements.progressBar.attributes[1].nodeValue = localStorage.getItem(`day${day}Progress`)
+    elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+    elements.progressBar.attributes[1].nodeValue = localStorage.getItem(data)
 }
 
 function checkForComplete() { 
-    if(localStorage.getItem(`day${day}Progress`) == elements.progressBar.max){
+    if(localStorage.getItem(data) == elements.progressBar.max){
         elements.congratsText.style.display = 'block'
         elements.resetProgressButton.style.display = 'block'
     } 
 }
-
-function checkForCurrentProgressIsNull() {
-    if(localStorage.getItem(`day${day}Progress`) == null){
-        localStorage.setItem(`day${day}Progress`, `0`);
-    }
-        for(let i = 0; i < 7; i++){
-            if(localStorage.getItem(`day${i}Progress`) == null){
-                localStorage.setItem(`day${i}Progress`, 0)
-            }
-        }
-}
-
-
-
 
 displayWelcomeIntroOrActualSite()  // works
 setNameForGreetingAndUserCupSize() // works
@@ -160,10 +186,6 @@ loadCurrentVolumeFromLocalStorage() // works
 
 
 checkForComplete() // works
-checkForCurrentProgressIsNull()
-
-if(localStorage.getItem('progressValue') == null){
-   (localStorage.getItem('progressValue'))
-} 
 
 console.log(clicks)
+console.log(data)

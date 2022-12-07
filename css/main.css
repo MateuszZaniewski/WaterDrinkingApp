@@ -309,6 +309,31 @@ body {
   border-radius: 1rem;
 }
 
+.substractWater {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 5%;
+  padding-bottom: 5%;
+  font-size: 1.2rem;
+}
+.substractWater .substractButton {
+  display: flex;
+}
+.substractWater .substractButton .substractButtons {
+  border: 1px solid #b1d7f8;
+  padding: 0.25rem 0.5rem;
+}
+.substractWater .substractButton .OFF {
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #b1d7f8;
+}
+.substractWater .substractButton .ON {
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: white;
+}
+
 .forNewUsersOnly {
   display: block;
 }

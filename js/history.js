@@ -32,7 +32,6 @@ const calendar = {
     const data = new Date()
     let day = data.getDay()
 
-    console.log(calendar.valuesSpans)
 
 function setLocalStorageValuesForDaysOfWeek(){
         if(localStorage.getItem(`day${day}`) == null)
