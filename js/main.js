@@ -75,24 +75,31 @@ function FillProgressBarByClickingCupImage() {
         clicks = clicks
     }
     let progress = Number(this.dataset.size)
+    let clickedImg = this
 
     if(substractMode == false){
         elements.progressValue.value += progress
         localStorage.setItem(data,`${elements.progressValue.value}`)
         elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+        clickedImg.classList.toggle('shake')
+        function removeShake(){
+            clickedImg.classList.toggle('shake')
+        }
+        setTimeout(removeShake, 1000)
+        
     } else {
         if(localStorage.getItem(data) != elements.progressBar.max){
             elements.progressValue.value -= progress
             localStorage.setItem(data,`${elements.progressValue.value}`)
             elements.currentVolume.innerText = `${localStorage.getItem(data)} ml`
+            clickedImg.classList.toggle('shake')
+        function removeShake(){
+            clickedImg.classList.toggle('shake')
+        }
+        setTimeout(removeShake, 1000)
         }
     }
-    
-
-
     showSaveMaggase()
-    console.log(localStorage.getItem(data))
-    console.log(Math.floor(localStorage.getItem('weight')*35))
 }
 
 function toggleSubstractWaterON() {

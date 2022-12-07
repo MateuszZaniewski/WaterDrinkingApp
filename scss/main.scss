@@ -28,6 +28,7 @@ body{
     display: block;
 }
 
+
 .headerNav {
     font-size: clamp(1rem, 5vw, 2rem);
     display: flex;
@@ -115,7 +116,7 @@ body{
 
     progress::-webkit-progress-value {
         // background: $blueShade6; 
-        background-image: linear-gradient(to right, #54A8EF, #6E9AD3, #888BB7, #A17D9A, #BB6E7E, #D56062);
+        background-image: linear-gradient(to right, $blueShade2, $blueShade3, $blueShade4, $blueShade5, $blueShade6);
         border-radius: 2rem;
     }
 
@@ -465,7 +466,28 @@ body{
 
 
 
+/// ANIMATION ///
 
+.shake{
+    animation-name: glassShake;
+    animation-duration: 1s;
+}
+
+@keyframes glassShake {
+    0% {transform: rotate(0deg);}
+    10% {transform: rotate(-5deg);}
+    20% {transform: rotate(5deg);}
+    30% {transform: rotate(-10deg);}
+    40% {transform: rotate(10deg);}
+    50% {transform: rotate(-15deg);}
+    60% {transform: rotate(15deg);}
+    70% {transform: rotate(-10deg);}
+    80% {transform: rotate(10deg);}
+    90% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/// ANIMATION ///
 
 @media screen and (min-width: 600px){
     .callendar__day{
