@@ -59,11 +59,10 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     
 
 }
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const options = {year: 'numeric', month: 'long', day: 'numeric' };
 let clicks = 0
 const newDate = new Date()
 const data = newDate.toLocaleDateString("en-US", options)
-
 
 function FillProgressBarByClickingCupImage() {
     if(localStorage.getItem(data) < Math.floor(localStorage.getItem('weight')*35)){
@@ -161,7 +160,7 @@ function resetProgressBar() {
 }
 
 function loadCurrentVolumeFromLocalStorage() {
-    if(localStorage.getItem('data') == null){
+    if(localStorage.getItem(data) == null){
         elements.currentVolume.innerText = '0 ml'
     }
     else {
@@ -177,16 +176,8 @@ function checkForComplete() {
         elements.resetProgressButton.style.display = 'block'
     } 
 }
-
+loadCurrentVolumeFromLocalStorage() // works
 displayWelcomeIntroOrActualSite()  // works
 setNameForGreetingAndUserCupSize() // works
-
-
 calculateMaxWaterPerDayForUser() // works
-loadCurrentVolumeFromLocalStorage() // works
-
-
 checkForComplete() // works
-
-console.log(clicks)
-console.log(data)
