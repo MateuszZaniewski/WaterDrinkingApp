@@ -61,7 +61,7 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
 }
 const options = {year: 'numeric', month: 'long', day: 'numeric' };
 let clicks = 0
-const newDate = new Date()
+const newDate = new Date('2322-02-09')
 const data = newDate.toLocaleDateString("en-US", options)
 
 function FillProgressBarByClickingCupImage() {
