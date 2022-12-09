@@ -38,11 +38,11 @@ elements.substractOFF.addEventListener('click', toggleSubstractWaterOFF)
 
 function displayWelcomeIntroOrActualSite () {
     if(localStorage.getItem('name') == null){
-        elements.unregistered.style.display = 'block'
+        elements.unregistered.style.display = 'flex'
         elements.registered.style.display = 'none'
     }
     else {
-        elements.registered.style.display = 'block'
+        elements.registered.style.display = 'flex'
         elements.unregistered.style.display = 'none'
     }
 }

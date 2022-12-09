@@ -6,8 +6,6 @@ const history = {
     dataList : document.querySelector('.container--data__list'),
     dayListItem : document.querySelector('.day--list__item'),
     dataListItem : document.querySelector('.data--list__item')
-
-
 }
 
 
