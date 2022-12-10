@@ -15,12 +15,10 @@ settings.clearStorageButton.addEventListener('click', clearLocalStorage)
 function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
     let weight = document.querySelector('#weight').value
-    let gender = document.querySelector('#gender').value
     let cupSize = document.querySelector('#cupSize').value
     console.log(name, weight, gender, cupSize)
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
-    localStorage.setItem('gender', `${gender}`);
     localStorage.setItem('cupSize', `${cupSize}`);
     settings.saveMassage.style.display = 'block'
     setTimeout(showSaveMaggase, 3000)
