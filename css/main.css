@@ -26,6 +26,16 @@ body {
   display: block;
 }
 
+.bgCB {
+  background-color: #d0e7fb;
+  border: 1px solid #92c7f5;
+  border-radius: 0.5rem;
+}
+
+.bgCW {
+  background-color: #ffffff;
+}
+
 .registeredUsersOnly {
   display: flex;
   flex-flow: column nowrap;
@@ -65,8 +75,9 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 5% 3% 5%;
 }
 .kropelekAndText #kropelekImg {
   width: 35%;
@@ -181,9 +192,9 @@ body {
 }
 
 .inputSection {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding-bottom: 3rem;
+  padding: 3rem 2rem 0 2rem;
 }
 .inputSection .genders {
   display: flex;

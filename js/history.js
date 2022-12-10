@@ -12,6 +12,17 @@ const history = {
 
 console.log(localStorage.getItem('name'))
 
+////
+window.addEventListener('load', checkForUserToRegister)
+////
+
+function checkForUserToRegister() {
+    console.log('Load sucessfully')
+    if(localStorage.getItem('name') == null){
+        window.location.href = '/'
+        location.reload()
+    }
+}
 
 function geeeting() {
     history.username.innerText = localStorage.getItem('name')

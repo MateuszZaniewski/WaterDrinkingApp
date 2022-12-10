@@ -29,6 +29,16 @@ body{
     display: block;
 }
 
+.bgCB {
+    background-color: $blueShade2;
+    border: 1px solid $blueShade4;
+    border-radius: 0.5rem;
+}
+
+.bgCW {
+    background-color: #ffffff;
+}
+
 
 .registeredUsersOnly {
     display: flex;
@@ -70,8 +80,9 @@ body{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 5% 3% 5%;
 
     #kropelekImg {
         width:  35%;
@@ -207,9 +218,9 @@ body{
 
 .inputSection {
     
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding-bottom: 3rem;
+    padding: 3rem 2rem 0 2rem;
 
     .genders{
         display: flex;

@@ -26,6 +26,7 @@ const unregisteredElements = {
 
 let substractMode = false;
 
+
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
 elements.cups.forEach((el) => {
     el.addEventListener('click', FillProgressBarByClickingCupImage)
@@ -55,13 +56,7 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('cupSize', `${cupSize}`);
-    if(localStorage.getItem(name) == null){
-        return
-    }
-    else if(localStorage.getItem(weight) == null){
-        return
-    }
-    else if(localStorage.getItem(cupSize) == null){
+    if(localStorage.getItem(name) == null || localStorage.getItem(weight) == null || localStorage.getItem(cupSize) == null){
         return
     } else {
         location.reload()

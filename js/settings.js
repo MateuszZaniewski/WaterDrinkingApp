@@ -10,16 +10,27 @@ const settings = {
 //////////////////////////////// Event Listeners ///////////////////////////////////////////////////////////////////
 settings.saveButton.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
 settings.clearStorageButton.addEventListener('click', clearLocalStorage)
+window.addEventListener('load', checkForUserToRegister)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function checkForUserToRegister() {
+    console.log('Load sucessfully')
+    if(localStorage.getItem('name') == null){
+        window.location.href = '/'
+        location.reload()
+    }
+}
+
 
 function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
     let weight = document.querySelector('#weight').value
     let cupSize = document.querySelector('#cupSize').value
-    console.log(name, weight, gender, cupSize)
+    console.log(name, weight, cupSize)
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('cupSize', `${cupSize}`);
+    setNameForGreeting()
     settings.saveMassage.style.display = 'block'
     setTimeout(showSaveMaggase, 3000)
 }
