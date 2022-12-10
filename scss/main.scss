@@ -272,14 +272,17 @@ body{
         padding-top: 5%;
         position: relative;
         height: 250px;
+        border-bottom: 1px solid $blueShade3;
+        border-top: 1px solid $blueShade3;
 
         & .historySection__Container{
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             gap: 1rem;
             overflow: auto;
             max-height: 100%;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
+            width: 100%;
 
             & .container--day, .container--data {
                 
@@ -289,8 +292,8 @@ body{
                 }
 
                 & ul li {
-                    border-bottom: 1px solid $blueShade3;
-                    padding: 1rem 1rem;
+                    border-bottom: 1px solid $blueShade5;
+                    padding: 0.5rem 0.5rem;
                 }
             }
         }
@@ -330,10 +333,10 @@ body{
     align-items: flex-end;
     margin-right: 5%;
     font-size: 1.2rem;
-    cursor: pointer;
 
     & .substractButton {
         display: flex;
+        cursor: pointer;
     
         & .substractButtons {
             border: 1px solid $blueShade3;
@@ -396,20 +399,17 @@ body{
                     width: 100%;
                     padding: 0.25rem 0.5rem;
                 }
-            }
-    
-            .submitDiv {
-                padding: 5% 0;
-    
-                & button {
+
+                .submit { 
                     padding: 0.5rem 1rem;
                     border-radius: 0.5rem;
                     border: 1px solid $blueShade6;
                     background-color: $blueShade5;
                     font-size: 1.5rem;
                     font-weight: 500;
+                    width: 50%;
+                    margin-top: 4%;
                 }
-                
             }
         }
     

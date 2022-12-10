@@ -38,7 +38,7 @@ elements.substractOFF.addEventListener('click', toggleSubstractWaterOFF)
 
 function displayWelcomeIntroOrActualSite () {
     if(localStorage.getItem('name') == null){
-        elements.unregistered.style.display = 'flex'
+        elements.unregistered.style.display = 'block'
         elements.registered.style.display = 'none'
     }
     else {
@@ -55,13 +55,24 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('cupSize', `${cupSize}`);
-    location.reload()
+    if(localStorage.getItem(name) == null){
+        return
+    }
+    else if(localStorage.getItem(weight) == null){
+        return
+    }
+    else if(localStorage.getItem(cupSize) == null){
+        return
+    } else {
+        location.reload()
+    }
+    
     
 
 }
 const options = {year: 'numeric', month: 'long', day: 'numeric' };
 let clicks = 0
-const newDate = new Date('2322-02-09')
+const newDate = new Date()
 const data = newDate.toLocaleDateString("en-US", options)
 
 function FillProgressBarByClickingCupImage() {
