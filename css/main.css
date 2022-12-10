@@ -50,10 +50,15 @@ body {
 }
 .headerNav i, .headerNav a {
   color: white;
+  -webkit-text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+          text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  transition: -webkit-text-decoration-color 300ms;
+  transition: text-decoration-color 300ms;
+  transition: text-decoration-color 300ms, -webkit-text-decoration-color 300ms;
+  padding: 0.5rem 0.3rem;
 }
 .headerNav .underline {
-  border-bottom: 2px solid white;
-  padding-bottom: 2px;
+  color: #1376ca;
 }
 
 .kropelekAndText {

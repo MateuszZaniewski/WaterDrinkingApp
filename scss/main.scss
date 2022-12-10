@@ -55,11 +55,13 @@ body{
 
     i, a {
         color: white;
+        text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+        transition: text-decoration-color 300ms;
+        padding: 0.5rem 0.3rem;
     }
 
     .underline{
-        border-bottom: 2px solid white;
-        padding-bottom: 2px;
+        color: $blueShade9;
     }
 }
 
