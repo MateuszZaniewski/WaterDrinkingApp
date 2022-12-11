@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  max-width: 620px;
+  max-width: 500px;
   height: 100%;
   margin: 0 auto;
   background-color: #ffffff;
@@ -36,6 +36,11 @@ body {
   background-color: #ffffff;
 }
 
+.fullPageView {
+  height: 100%;
+  width: 100%;
+}
+
 .registeredUsersOnly {
   display: flex;
   flex-flow: column nowrap;
@@ -43,7 +48,7 @@ body {
   justify-content: space-between;
 }
 
-.headerNav {
+.footerNav {
   font-size: clamp(1rem, 5vw, 2rem);
   display: flex;
   align-self: flex-end;
@@ -55,10 +60,11 @@ body {
   padding-bottom: min(1.6rem, 5%);
   background-color: #92c7f5;
   margin: 0 auto;
-  max-width: 620px;
+  max-width: 500px;
+  min-width: 350px;
   width: 100%;
 }
-.headerNav i, .headerNav a {
+.footerNav i, .footerNav a {
   color: white;
   -webkit-text-decoration: underline 0.15em rgba(0, 0, 0, 0);
           text-decoration: underline 0.15em rgba(0, 0, 0, 0);
@@ -67,7 +73,7 @@ body {
   transition: text-decoration-color 300ms, -webkit-text-decoration-color 300ms;
   padding: 0.5rem 0.3rem;
 }
-.headerNav .underline {
+.footerNav .underline {
   color: #1376ca;
 }
 
@@ -81,7 +87,7 @@ body {
 }
 .kropelekAndText #kropelekImg {
   width: 35%;
-  max-width: 280px;
+  max-width: 220px;
   height: 35%;
   max-height: 310px;
   min-height: 120px;
@@ -106,6 +112,8 @@ body {
   padding-top: 1rem;
   display: flex;
   justify-content: center;
+  max-width: 350px;
+  margin: 0 auto;
 }
 .status i {
   font-size: clamp(1.8rem, 4vw, 3rem);
@@ -195,10 +203,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 3rem 2rem 0 2rem;
-}
-.inputSection .genders {
-  display: flex;
-  gap: 2rem;
+  font-size: 1.7rem;
 }
 .inputSection form {
   display: flex;
@@ -206,9 +211,8 @@ body {
   flex-flow: column nowrap;
   width: 50%;
   gap: 0.3rem;
-  font-size: 1.5rem;
 }
-.inputSection input {
+.inputSection form input {
   margin-bottom: 1.5rem;
   margin-top: 0.25rem;
   padding: 0.5rem 1rem;
@@ -265,9 +269,13 @@ body {
   padding-bottom: 1rem;
   text-align: center;
 }
+.history .historySection .historySection__Container .container--day ul, .history .historySection .historySection__Container .container--data ul {
+  transform: rotate(180deg);
+}
 .history .historySection .historySection__Container .container--day ul li, .history .historySection .historySection__Container .container--data ul li {
   border-bottom: 1px solid #73b7f2;
   padding: 0.5rem 0.5rem;
+  transform: rotate(-180deg);
 }
 .history .wowEmptyIMG {
   height: 230px;
@@ -335,6 +343,7 @@ body {
 .forNewUsersOnly .dataAndImg .dataEnterDiv {
   width: 90%;
   margin: 0 auto;
+  font-size: 1.7rem;
 }
 .forNewUsersOnly .dataAndImg .dataEnterDiv form {
   display: flex;
@@ -345,7 +354,16 @@ body {
 }
 .forNewUsersOnly .dataAndImg .dataEnterDiv form input {
   width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.8rem 1rem;
+}
+.forNewUsersOnly .dataAndImg .dataEnterDiv form input::-moz-placeholder {
+  font-size: 1.8rem;
+}
+.forNewUsersOnly .dataAndImg .dataEnterDiv form input:-ms-input-placeholder {
+  font-size: 1.8rem;
+}
+.forNewUsersOnly .dataAndImg .dataEnterDiv form input::placeholder {
+  font-size: 1.8rem;
 }
 .forNewUsersOnly .dataAndImg .dataEnterDiv form .submit {
   padding: 0.5rem 1rem;

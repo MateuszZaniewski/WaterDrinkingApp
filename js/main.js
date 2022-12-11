@@ -25,7 +25,10 @@ const unregisteredElements = {
 }
 
 let substractMode = false;
-
+const options = {year: 'numeric', month: 'long', day: 'numeric' };
+let clicks = 0
+const newDate = new Date()
+const data = newDate.toLocaleDateString("en-US", options)
 
 //////////////////////////////////////////// Event listeners ///////////////////////////////////////////////////////
 elements.cups.forEach((el) => {
@@ -35,7 +38,16 @@ elements.resetProgressButton.addEventListener('click', resetProgressBar)
 unregisteredElements.submitButon.addEventListener('click', grabValuesFromSettingsFormAndAddToLocalStorage)
 elements.substractON.addEventListener('click', toggleSubstractWaterON)
 elements.substractOFF.addEventListener('click', toggleSubstractWaterOFF)
+window.addEventListener('load', checkForUserToRegister)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function checkForUserToRegister() {
+    loadCurrentVolumeFromLocalStorage() // works
+    displayWelcomeIntroOrActualSite()  // works
+    setNameForGreetingAndUserCupSize() // works
+    calculateMaxWaterPerDayForUser() // works
+    checkForComplete() // works
+}
 
 function displayWelcomeIntroOrActualSite () {
     if(localStorage.getItem('name') == null){
@@ -61,14 +73,7 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     } else {
         location.reload()
     }
-    
-    
-
 }
-const options = {year: 'numeric', month: 'long', day: 'numeric' };
-let clicks = 0
-const newDate = new Date()
-const data = newDate.toLocaleDateString("en-US", options)
 
 function FillProgressBarByClickingCupImage() {
     if(localStorage.getItem(data) < Math.floor(localStorage.getItem('weight')*35)){
@@ -182,8 +187,6 @@ function checkForComplete() {
         elements.resetProgressButton.style.display = 'block'
     } 
 }
-loadCurrentVolumeFromLocalStorage() // works
-displayWelcomeIntroOrActualSite()  // works
-setNameForGreetingAndUserCupSize() // works
-calculateMaxWaterPerDayForUser() // works
-checkForComplete() // works
+
+
+

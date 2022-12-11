@@ -12,43 +12,46 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="registeredUsersOnly">
-    <div class="kropelekAndText">
-        <img id="kropelekImg" src="assets/kropelek.png" alt="">
-        <div class="welcomeText">
-            <div class="welcomeTextBox">
-                <span>Hello <span class="username">Stranger</span> !</span>
-                <span>Here, You can change your data. If You wish to clear your data and start fresh, try button at the bottom of the page (Clear Your data) Beware! It will clear Your statistics and You will loose your progress.</span>
+    <div class="fullPageView">
+        <div class="registeredUsersOnly">
+            <div class="kropelekAndText">
+                <img id="kropelekImg" src="assets/kropelek.png" alt="">
+                <div class="welcomeText">
+                    <div class="welcomeTextBox">
+                        <span>Hello <span class="username">Stranger</span> !</span>
+                        <span>Here, You can change your data. If You wish to clear your data and start fresh, try button at the bottom of the page (Clear Your data) Beware! It will clear Your statistics and You will loose your progress.</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="inputSection">
-        <form action="/inputfields">
-            <label for="Name">Your Name</label>
-                <input class="bgCB" type="text" name="" id="name" placeholder="Enter your name" >
+        
+            <div class="inputSection">
+                <form action="/inputfields">
+                    <label for="Name">Your Name</label>
+                        <input class="bgCB" type="text" name="" id="name" placeholder="Enter your name" >
+                    
+                    <label for="Weight">Weight (kg)</label>
+                        <input class="bgCB" type="number" name="" id="weight" placeholder="Your weight in kg">
             
-            <label for="Weight">Weight (kg)</label>
-                <input class="bgCB" type="number" name="" id="weight" placeholder="Your weight in kg">
+                    <label for="CupSize">You favourite cup size (ml)</label>
+                            <input class="bgCB" type="number" name="" id="cupSize" placeholder="Your cup size in ml">
+                </form>
+                <div class="submitDiv">
+                    <button class="submit">Change</button>
+                    <button class="clearStorage"><a href="index.html">Clear your data</a></button>
+                </div>
+                <div class="saveMassage">
+                    <span class="saveMassage__text">Your data have been saved</span>
+                </div>
+            </div>
+        
+            <div class="footerNav">
+                <a href="index.html"><i class="fa-solid fa-house"> </i> </a>
+                <a href="history.html"><i class="fa-solid fa-chart-line"> </i> </a>
+                <a href="settings.html"><i class="fa-solid fa-gear underline"> </i> </a>
+            </div>
+            </div>
+    </div>
     
-            <label for="CupSize">You favourite cup size (ml)</label>
-                    <input class="bgCB" type="number" name="" id="cupSize" placeholder="Your cup size in ml">
-        </form>
-        <div class="submitDiv">
-            <button class="submit">Change</button>
-            <button class="clearStorage"><a href="index.html">Clear your data</a></button>
-        </div>
-        <div class="saveMassage">
-            <span class="saveMassage__text">Your data have been saved</span>
-        </div>
-    </div>
-
-    <div class="headerNav">
-        <a href="index.html"><i class="fa-solid fa-house"> </i> </a>
-        <a href="history.html"><i class="fa-solid fa-chart-line"> </i> </a>
-        <a href="settings.html"><i class="fa-solid fa-gear underline"> </i> </a>
-    </div>
-    </div>
 
     <script src="js/settings.js"></script>
 </body>

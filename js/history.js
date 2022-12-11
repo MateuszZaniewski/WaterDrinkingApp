@@ -10,18 +10,16 @@ const history = {
     username : document.querySelector('.username')
 }
 
-console.log(localStorage.getItem('name'))
+console.log(document.body.scrollHeight)
 
-////
+//////////////////////////////// Event Listeners ///////////////////////////////////////////////////////////////////
 window.addEventListener('load', checkForUserToRegister)
-////
+//////////////////////////////// Event Listeners ///////////////////////////////////////////////////////////////////
 
 function checkForUserToRegister() {
-    console.log('Load sucessfully')
-    if(localStorage.getItem('name') == null){
-        window.location.href = '/'
-        location.reload()
-    }
+    populateDayListWithElements()
+    checkIfThereIsSomethingToDisplay()
+    geeeting()
 }
 
 function geeeting() {
@@ -59,9 +57,7 @@ function checkIfThereIsSomethingToDisplay () {
     }
 }
 
-populateDayListWithElements()
-checkIfThereIsSomethingToDisplay()
-geeeting()
+
 
 
 

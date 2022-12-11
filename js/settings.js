@@ -13,14 +13,6 @@ settings.clearStorageButton.addEventListener('click', clearLocalStorage)
 window.addEventListener('load', checkForUserToRegister)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function checkForUserToRegister() {
-    console.log('Load sucessfully')
-    if(localStorage.getItem('name') == null){
-        window.location.href = '/'
-        location.reload()
-    }
-}
-
 
 function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
@@ -62,5 +54,8 @@ function clearLocalStorage() {
     
 }
 
-populateHTMLFormsWithLocalStorageData()
-setNameForGreeting()
+function checkForUserToRegister () {
+    populateHTMLFormsWithLocalStorageData()
+    setNameForGreeting()
+}
+
