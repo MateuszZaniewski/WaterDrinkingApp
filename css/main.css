@@ -61,7 +61,6 @@ body {
   background-color: #92c7f5;
   margin: 0 auto;
   max-width: 500px;
-  min-width: 350px;
   width: 100%;
 }
 .footerNav i, .footerNav a {
@@ -133,7 +132,7 @@ body {
   border-radius: 2rem;
 }
 .status .bar {
-  width: clamp(25rem, 60vw, 44rem);
+  width: clamp(0rem, 60vw, 44rem);
   border: 0.18rem solid #1688e9;
   height: clamp(1.8rem, 3vh, 2.2rem);
   border-radius: 1rem;
@@ -209,7 +208,7 @@ body {
   display: flex;
   justify-content: left;
   flex-flow: column nowrap;
-  width: 50%;
+  width: 60%;
   gap: 0.3rem;
 }
 .inputSection form input {
@@ -299,9 +298,11 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-right: 5%;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  width: 67%;
+  margin: 0 auto;
 }
 .substractWater .substractButton {
   display: flex;
