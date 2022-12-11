@@ -136,6 +136,7 @@ body{
     progress::-webkit-progress-value {
         background-image: linear-gradient(to right, $blueShade2, $blueShade3, $blueShade4, $blueShade5, $blueShade6);
         border-radius: 2rem;
+        transition: width 2s ease;
     }
 
     progress::-webkit-progress-bar {
@@ -150,7 +151,6 @@ body{
         border-radius: 1rem;
         margin: 0 0.5rem;
         padding: 0.02rem 0.1rem;
-        
     }
 }
 

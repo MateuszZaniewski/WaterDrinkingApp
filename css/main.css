@@ -126,6 +126,8 @@ body {
 .status progress::-webkit-progress-value {
   background-image: linear-gradient(to right, #d0e7fb, #b1d7f8, #92c7f5, #73b7f2, #54a8ef);
   border-radius: 2rem;
+  -webkit-transition: width 2s ease;
+  transition: width 2s ease;
 }
 .status progress::-webkit-progress-bar {
   background-color: #ffffff;
