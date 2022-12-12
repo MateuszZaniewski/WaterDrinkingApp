@@ -272,11 +272,16 @@ body {
 }
 .history .historySection .historySection__Container .container--day ul, .history .historySection .historySection__Container .container--data ul {
   transform: rotate(180deg);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
 }
 .history .historySection .historySection__Container .container--day ul li, .history .historySection .historySection__Container .container--data ul li {
   border-bottom: 1px solid #73b7f2;
   padding: 0.5rem 0.5rem;
   transform: rotate(-180deg);
+  background-color: #b1d7f8;
+  border-radius: 0.5rem;
 }
 .history .wowEmptyIMG {
   height: 230px;
