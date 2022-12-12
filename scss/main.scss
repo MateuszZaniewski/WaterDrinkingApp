@@ -61,8 +61,8 @@ body{
     justify-content: space-evenly;
     align-items: center;
     gap: min(7vw, 80px);
-    padding-top: 1.6rem;
-    padding-bottom: min(1.6rem, 5%);
+    padding-top: min(1rem, 5%);
+    padding-bottom: min(1rem, 5%);
     background-color: $blueShade4;
     margin: 0 auto;
     max-width: 500px;
@@ -285,17 +285,17 @@ body{
 .history{
     padding-top: 5%;
 
-    & .historySection {
+    & .historyDay {
         padding-top: 5%;
         position: relative;
         height: 250px;
         border-bottom: 1px solid $blueShade3;
         border-top: 1px solid $blueShade3;
 
-        & .historySection__Container{
+        & .historyDay__Container{
             display: flex;
-            justify-content: space-evenly;
-            gap: 1rem;
+            justify-content: center;
+            row-gap: 1rem;
             overflow: auto;
             max-height: 100%;
             font-size: 1.6rem;
@@ -317,12 +317,20 @@ body{
                     
                 }
 
+                & .container--data__list li {
+                    border-radius: 0.5rem 0 0 0.5rem;
+                }
+
+                & .container--day__list li {
+                    border-radius: 0 0.5rem 0.5rem 0;
+                    border-left: 2px solid $blueShade5;
+                }
+
                 & ul li {
-                    border-bottom: 1px solid $blueShade5;
                     padding: 0.5rem 0.5rem;
                     transform: rotate(-180deg);
                     background-color: $blueShade3;
-                    border-radius: 0.5rem;
+                    
                     //box shadow add
                     
                 }
@@ -330,6 +338,44 @@ body{
         }
 
     }
+
+    .historyDetails {
+        font-size: 1.6rem;
+        text-align: center;
+
+            .wowEmptyIMG {
+                display: none;
+            }
+
+
+            & .historyDetails--buttons {
+
+                display: flex;
+                justify-content: space-around;
+                padding-top: 2%;
+
+                & .activeButtons {
+                    background-color: $blueShade2;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.5rem;
+                }
+
+                & .ttl {
+                    background-color: $blueShade5;
+                }
+            }
+
+            .historyDetails__Container {
+
+                & #total{
+                    display: block;
+                }
+
+                & #amount, #success {
+                    display: none;
+                }
+            }
+        }
 
     .wowEmptyIMG {
         height: 230px;

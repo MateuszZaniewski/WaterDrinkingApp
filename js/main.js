@@ -47,7 +47,15 @@ function checkForUserToRegister() {
     setNameForGreetingAndUserCupSize() // works
     calculateMaxWaterPerDayForUser() // works
     checkForComplete() // works
+    createLocalStorageTotalValue()
 }
+
+function createLocalStorageTotalValue() {
+    if(localStorage.getItem('total') == null){
+        localStorage.setItem('total', 0)
+    }
+}
+
 
 function displayWelcomeIntroOrActualSite () {
     if(localStorage.getItem('name') == null){
