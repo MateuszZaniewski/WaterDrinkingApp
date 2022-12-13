@@ -18,7 +18,6 @@ function grabValuesFromSettingsFormAndAddToLocalStorage(){
     let name = document.querySelector('#name').value
     let weight = document.querySelector('#weight').value
     let cupSize = document.querySelector('#cupSize').value
-    console.log(name, weight, cupSize)
     localStorage.setItem('name', `${name}`);
     localStorage.setItem('weight', `${weight}`);
     localStorage.setItem('cupSize', `${cupSize}`);

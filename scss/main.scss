@@ -29,6 +29,7 @@ body{
     display: block;
 }
 
+
 .bgCB {
     background-color: $blueShade2;
     border: 1px solid $blueShade4;
@@ -271,7 +272,7 @@ body{
     }
 
     .saveMassage{
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         text-align: center;
         padding-top: 1rem;
         color: $blueShade7;
@@ -288,7 +289,7 @@ body{
     & .historyDay {
         padding-top: 5%;
         position: relative;
-        height: 250px;
+        height: 200px;
         border-bottom: 1px solid $blueShade3;
         border-top: 1px solid $blueShade3;
 
@@ -352,20 +353,30 @@ body{
 
                 display: flex;
                 justify-content: space-around;
-                padding-top: 2%;
+                padding: 2% 0 6% 0;
 
                 & .activeButtons {
                     background-color: $blueShade2;
                     padding: 0.25rem 0.5rem;
                     border-radius: 0.5rem;
+                    cursor: pointer;
+                    
                 }
 
-                & .ttl {
-                    background-color: $blueShade5;
+                .activeButton {
+                    background-color: $blueShade7;
+                    color: white;
                 }
             }
 
             .historyDetails__Container {
+
+                font-size: clamp(1.7rem, 5vw, 2rem);
+                background-color: $blueShade3;
+                width: fit-content;
+                margin: 0 auto;
+                padding: 0.25rem 0.5rem;
+                border-radius: 0.5rem;
 
                 & #total{
                     display: block;

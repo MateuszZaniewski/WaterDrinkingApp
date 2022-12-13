@@ -238,7 +238,7 @@ body {
   background-color: #d0e7fb;
 }
 .inputSection .saveMassage {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   text-align: center;
   padding-top: 1rem;
   color: #3598ec;
@@ -253,7 +253,7 @@ body {
 .history .historyDay {
   padding-top: 5%;
   position: relative;
-  height: 250px;
+  height: 200px;
   border-bottom: 1px solid #b1d7f8;
   border-top: 1px solid #b1d7f8;
 }
@@ -298,15 +298,27 @@ body {
 .history .historyDetails .historyDetails--buttons {
   display: flex;
   justify-content: space-around;
-  padding-top: 2%;
+  padding: 2% 0 6% 0;
 }
 .history .historyDetails .historyDetails--buttons .activeButtons {
   background-color: #d0e7fb;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
-.history .historyDetails .historyDetails--buttons .ttl {
-  background-color: #73b7f2;
+.history .historyDetails .historyDetails--buttons .activeButton {
+  background-color: #3598ec;
+  color: white;
+}
+.history .historyDetails .historyDetails__Container {
+  font-size: clamp(1.7rem, 5vw, 2rem);
+  background-color: #b1d7f8;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
 }
 .history .historyDetails .historyDetails__Container #total {
   display: block;

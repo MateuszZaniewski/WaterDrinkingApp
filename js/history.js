@@ -11,7 +11,10 @@ const history = {
     total : document.querySelector('#total'),
     amount : document.querySelector('#amount'),
     success : document.querySelector('#success'),
-    historyButtons : document.querySelectorAll('.activeButtons')
+    historyButtons : document.querySelectorAll('.activeButtons'),
+    ttl : document.querySelector('.ttl'),
+    amt : document.querySelector('.amt'),
+    scs : document.querySelector('.scs')
 }
 
 
@@ -49,10 +52,9 @@ function calculateTotalConsumptionOfWaterAndPerDay() {
             }
         }
     }
-    console.log(days)
     localStorage.setItem('total', full)
-    history.total.innerText = `Water consumption in total : ${localStorage.getItem('total')}`
-    history.amount.innerText = `Amount of water per day : ${Math.ceil(localStorage.getItem('total')/days)}`
+    history.total.innerText = `Water consumption in total : ${localStorage.getItem('total')} ml`
+    history.amount.innerText = `Amount of water per day : ${Math.ceil(localStorage.getItem('total')/days)} ml`
     history.success.innerText = `Days completed : ${succes}`
 }
 
@@ -77,24 +79,30 @@ function populateDayListWithElements() {
 }
 
 function toggleDiffrentStats() {
-    console.log(this)
     if(this.classList.contains('ttl')){
         history.total.style.display = 'block'
         history.amount.style.display = 'none'
         history.success.style.display = 'none'
-        this.style.backgroundColor = '$blueShade5'
+        history.ttl.classList.add('activeButton')
+        history.amt.classList.remove('activeButton')
+        history.scs.classList.remove('activeButton')
+        
     }
     else if(this.classList.contains('amt')){
         history.total.style.display = 'none'
         history.amount.style.display = 'block'
         history.success.style.display = 'none'
-        this.style.background = 'blue'
+        history.amt.classList.add('activeButton')
+        history.ttl.classList.remove('activeButton')
+        history.scs.classList.remove('activeButton')
     }
     else {
         history.total.style.display = 'none'
         history.amount.style.display = 'none'
         history.success.style.display = 'block'
-        this.style.background = '$blueShade5'
+        history.scs.classList.add('activeButton')
+        history.amt.classList.remove('activeButton')
+        history.ttl.classList.remove('activeButton')
     }
 }
 
